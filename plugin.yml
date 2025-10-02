@@ -1,10 +1,10 @@
 name: MazeShop
-version: 1.0.0
+version: 1.2.0
 main: Pixelis0P\MazeShop\MazeShop
 api: 5.0.0
 author: Pixelis0P & MazecraftMCN Team
 description: A comprehensive shop plugin for PocketMine-MP with MazePay integration
-website: https://github.com/Pixelis0P/MazeShop
+website: https://github.com/PixelMCN/MazeShop
 depend: [MazePay]
 
 permissions:
@@ -19,3 +19,7 @@ permissions:
   mazeshop.command.sell:
     description: Allows usage of /sell command
     default: true
+  
+  mazeshop.command.admin:
+    description: Allows usage of /shopadmin command to manage shop
+    default: op

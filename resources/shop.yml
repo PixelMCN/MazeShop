@@ -1,6 +1,17 @@
 # MazeShop Items Configuration
 # Authors: Pixelis0P & MazecraftMCN Team
-config-version: "1.0.0"
+
+#      ___           ___           ___           ___           ___           ___           ___           ___   
+#     /\  \         /\  \         /\__\         /\__\         /\__\         /\  \         /\  \         /\  \  
+#    |::\  \       /::\  \       /::|  |       /:/ _/_       /:/ _/_        \:\  \       /::\  \       /::\  \ 
+#    |:|:\  \     /:/\:\  \     /:/:|  |      /:/ /\__\     /:/ /\  \        \:\  \     /:/\:\  \     /:/\:\__\
+#  __|:|\:\  \   /:/ /::\  \   /:/|:|  |__   /:/ /:/ _/_   /:/ /::\  \   ___ /::\  \   /:/  \:\  \   /:/ /:/  /
+# /::::|_\:\__\ /:/_/:/\:\__\ /:/ |:| /\__\ /:/_/:/ /\__\ /:/_/:/\:\__\ /\  /:/\:\__\ /:/__/ \:\__\ /:/_/:/  / 
+# \:\~~\  \/__/ \:\/:/  \/__/ \/__|:|/:/  / \:\/:/ /:/  / \:\/:/ /:/  / \:\/:/  \/__/ \:\  \ /:/  / \:\/:/  /  
+#  \:\  \        \::/__/          |:/:/  /   \::/_/:/  /   \::/ /:/  /   \::/__/       \:\  /:/  /   \::/__/   
+#   \:\  \        \:\  \          |::/  /     \:\/:/  /     \/_/:/  /     \:\  \        \:\/:/  /     \:\  \   
+#    \:\__\        \:\__\         |:/  /       \::/  /        /:/  /       \:\__\        \::/  /       \:\__\  
+#     \/__/         \/__/         |/__/         \/__/         \/__/         \/__/         \/__/         \/__/   
 
 # Category Configuration
 # Each category can have:
@@ -12,7 +23,7 @@ config-version: "1.0.0"
 categories:
   - name: "Blocks"
     icon: "stone"
-    image: "https://i.imgur.com/blocks-icon.png"
+    image: "textures/blocks/stone"
     items:
       - item: "stone"
         buy_price: 2.0
@@ -53,7 +64,7 @@ categories:
 
   - name: "Wood"
     icon: "oak_log"
-    image: "https://i.imgur.com/wood-icon.png"
+    image: "textures/blocks/oak_log"
     items:
       - item: "oak_log"
         buy_price: 5.0
@@ -90,7 +101,7 @@ categories:
 
   - name: "Food"
     icon: "cooked_beef"
-    image: "https://i.imgur.com/food-icon.png"
+    image: "textures/items/bread"
     items:
       - item: "apple"
         buy_price: 5.0
@@ -123,7 +134,7 @@ categories:
 
   - name: "Tools"
     icon: "diamond_pickaxe"
-    image: "https://i.imgur.com/tools-icon.png"
+    image: "textures/items/diamond_pickaxe"
     items:
       - item: "wooden_pickaxe"
         buy_price: 10.0
@@ -160,7 +171,7 @@ categories:
 
   - name: "Armor"
     icon: "diamond_chestplate"
-    image: "https://i.imgur.com/armor-icon.png"
+    image: "textures/items/diamond_chestplate"
     items:
       - item: "leather_helmet"
         buy_price: 20.0
@@ -197,7 +208,7 @@ categories:
 
   - name: "Potions"
     icon: "potion"
-    image: "https://i.imgur.com/potions-icon.png"
+    image: "textures/items/potion"
     items:
       - item: "glass_bottle"
         buy_price: 5.0

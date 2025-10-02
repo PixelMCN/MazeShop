@@ -95,6 +95,14 @@ A feature-rich shop plugin for PocketMine-MP servers with beautiful form-based U
 |---------|-------------|------------|
 | `/shop disable` | Disable shop for players | `mazeshop.command.shop.admin` |
 | `/shop enable` | Enable shop for players | `mazeshop.command.shop.admin` |
+| `/shopadmin` | Open shop management GUI | `mazeshop.command.admin` |
+
+**Shop Management Features:**
+- **Create/Delete/Edit Categories** - Full category management
+- **Add/Remove/Edit Items** - Manage items in each category
+- **Edit Prices** - Change buy/sell prices on the fly
+- **Custom Images** - Set image URLs for categories and items
+- **Real-time Updates** - Changes saved instantly to shop.yml
 
 ---
 
@@ -104,6 +112,7 @@ A feature-rich shop plugin for PocketMine-MP servers with beautiful form-based U
 mazeshop.command.shop         # Use /shop command (default: true)
 mazeshop.command.shop.admin   # Admin shop controls (default: op)
 mazeshop.command.sell         # Use /sell command (default: true)
+mazeshop.command.admin        # Use /shopadmin for shop management (default: op)
 ```
 
 ---
@@ -233,6 +242,20 @@ Just add to the `items:` list under any category:
    ```
    Re-enable shop access for everyone
 
+3. **Manage Shop (GUI):**
+   ```
+   /shopadmin
+   ```
+   Opens the shop management interface where you can:
+   - **Create new categories** with custom icons and images
+   - **Edit existing categories** (rename, change icon, update image)
+   - **Delete categories** (removes all items inside)
+   - **Add items to categories** with buy/sell prices
+   - **Edit item prices** and images
+   - **Delete items** from categories
+   
+   All changes are saved instantly to `shop.yml`!
+
 ---
 
 ## ❓ FAQ
@@ -241,10 +264,10 @@ Just add to the `items:` list under any category:
 **A:** Yes! MazePay is required for the economy system. MazeShop integrates directly with MazePay's wallet system.
 
 ### **Q: Can I add custom items?**
-**A:** Yes! Edit `shop.yml` and add any item to any category. Use PocketMine's item names (e.g., `diamond_sword`, `cooked_beef`, etc.)
+**A:** Yes! You can either edit `shop.yml` manually or use the `/shopadmin` command for a user-friendly GUI to add items. Use PocketMine's item names (e.g., `diamond_sword`, `cooked_beef`, etc.)
 
 ### **Q: How do I change prices?**
-**A:** Edit `shop.yml` and modify the `buy_price` and `sell_price` values for any item.
+**A:** You can either edit `shop.yml` manually or use `/shopadmin` GUI → Select category → Manage Items → Select item → Edit Prices.
 
 ### **Q: Can players sell items not in the shop?**
 **A:** No, only items configured in `shop.yml` with a `sell_price > 0` can be sold.
@@ -259,7 +282,45 @@ Just add to the `items:` list under any category:
 **A:** Yes, it counts all items of the same type regardless of enchantments (when using `equals` with ignoreNBT).
 
 ### **Q: How do I remove a category?**
-**A:** Simply delete the entire category section from `shop.yml` and restart the server.
+**A:** Use `/shopadmin` → Select the category → Delete Category. Or manually delete it from `shop.yml` and restart.
+
+---
+
+## 📊 File Structure
+
+```
+MazeShop/
+├── plugin.yml
+├── resources/
+│   ├── config.yml
+│   └── shop.yml
+└── src/
+    └── Pixelis0P/
+        └── MazeShop/
+            ├── MazeShop.php
+            ├── commands/
+            │   ├── ShopCommand.php
+            │   ├── SellCommand.php
+            │   └── ShopAdminCommand.php
+            ├── forms/
+            │   ├── CategoryListForm.php
+            │   ├── ShopForm.php
+            │   ├── BuySellForm.php
+            │   ├── SellConfirmForm.php
+            │   └── admin/
+            │       ├── CategoryManageForm.php
+            │       ├── CategoryCreateForm.php
+            │       ├── CategoryEditForm.php
+            │       ├── CategoryEditInfoForm.php
+            │       ├── CategoryDeleteForm.php
+            │       ├── ItemManageForm.php
+            │       ├── ItemCreateForm.php
+            │       ├── ItemEditForm.php
+            │       ├── ItemEditPriceForm.php
+            │       └── ItemDeleteForm.php
+            └── utils/
+                └── ItemUtils.php
+```
 
 ---
 
