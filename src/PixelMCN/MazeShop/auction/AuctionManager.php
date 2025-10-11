@@ -70,7 +70,8 @@ class AuctionManager {
         int $duration
     ): ?Auction {
         $config = $this->plugin->getConfig();
-        $maxAuctions = $config->get("auction")["max-auctions-per-player"] ?? 5;
+        $auctionConfig = $config->get("auction");
+        $maxAuctions = is_array($auctionConfig) ? ($auctionConfig["max-auctions-per-player"] ?? 5) : 5;
         
         $playerAuctions = $this->getPlayerAuctions($seller->getName());
         if (count($playerAuctions) >= $maxAuctions) {
@@ -175,7 +176,9 @@ class AuctionManager {
             // Give money to seller
             $sellerPlayer = $this->plugin->getServer()->getPlayerExact($seller);
             if ($sellerPlayer !== null) {
-                $fee = $auction->getCurrentBid() * ($this->plugin->getConfig()->get("auction")["auction-fee"] ?? 0) / 100;
+                $auctionConfig = $this->plugin->getConfig()->get("auction");
+                $feePercentage = is_array($auctionConfig) ? ($auctionConfig["auction-fee"] ?? 0) : 0;
+                $fee = $auction->getCurrentBid() * $feePercentage / 100;
                 $finalAmount = $auction->getCurrentBid() - $fee;
                 $this->plugin->getEconomyManager()->addMoney($sellerPlayer, $finalAmount);
             }

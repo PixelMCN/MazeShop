@@ -105,7 +105,8 @@ class DatabaseManager {
         }
 
         $config = $this->plugin->getConfig();
-        $syncInterval = $config->get("database")["sync-interval"] ?? 300;
+        $dbConfig = $config->get("database");
+        $syncInterval = is_array($dbConfig) ? ($dbConfig["sync-interval"] ?? 300) : 300;
 
         $this->plugin->getScheduler()->scheduleRepeatingTask(
             new DatabaseSyncTask($this->plugin),

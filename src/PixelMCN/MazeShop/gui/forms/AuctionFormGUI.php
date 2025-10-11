@@ -275,14 +275,19 @@ class AuctionFormGUI {
 
                 $config = $this->plugin->getConfig();
                 $auctionConfig = $config->get("auction");
-
-                if ($duration < $auctionConfig["min-duration"]) {
-                    $player->sendMessage("§cDuration must be at least " . $auctionConfig["min-duration"] . " seconds!");
+                
+                if (!is_array($auctionConfig)) {
+                    $player->sendMessage("§cAuction configuration error!");
                     return;
                 }
 
-                if ($duration > $auctionConfig["max-duration"]) {
-                    $player->sendMessage("§cDuration cannot exceed " . $auctionConfig["max-duration"] . " seconds!");
+                if ($duration < ($auctionConfig["min-duration"] ?? 300)) {
+                    $player->sendMessage("§cDuration must be at least " . ($auctionConfig["min-duration"] ?? 300) . " seconds!");
+                    return;
+                }
+
+                if ($duration > ($auctionConfig["max-duration"] ?? 86400)) {
+                    $player->sendMessage("§cDuration cannot exceed " . ($auctionConfig["max-duration"] ?? 86400) . " seconds!");
                     return;
                 }
 

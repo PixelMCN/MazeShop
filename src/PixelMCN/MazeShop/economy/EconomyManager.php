@@ -73,11 +73,13 @@ class EconomyManager {
     }
 
     public function getCurrencySymbol(): string {
-        return $this->plugin->getConfig()->get("currency")["symbol"] ?? "$";
+        $currency = $this->plugin->getConfig()->get("currency");
+        return is_array($currency) ? ($currency["symbol"] ?? "$") : "$";
     }
 
     public function getCurrencyName(): string {
-        return $this->plugin->getConfig()->get("currency")["name"] ?? "Money";
+        $currency = $this->plugin->getConfig()->get("currency");
+        return is_array($currency) ? ($currency["name"] ?? "Money") : "Money";
     }
 
     public function formatMoney(float $amount): string {

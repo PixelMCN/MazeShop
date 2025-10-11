@@ -33,7 +33,8 @@ class ShopCommand extends Command {
 
         if (empty($args)) {
             // Open main shop GUI
-            $guiType = $this->plugin->getConfig()->get("gui")["shop-type"] ?? "form";
+            $guiConfig = $this->plugin->getConfig()->get("gui");
+            $guiType = is_array($guiConfig) ? ($guiConfig["shop-type"] ?? "form") : "form";
             if ($guiType === "form") {
                 $gui = new ShopFormGUI($this->plugin);
                 $gui->sendMainMenu($sender);

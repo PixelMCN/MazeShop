@@ -33,7 +33,8 @@ class AuctionCommand extends Command {
 
         if (empty($args)) {
             // Open auction GUI
-            $guiType = $this->plugin->getConfig()->get("gui")["auction-type"] ?? "form";
+            $guiConfig = $this->plugin->getConfig()->get("gui");
+            $guiType = is_array($guiConfig) ? ($guiConfig["auction-type"] ?? "form") : "form";
             if ($guiType === "form") {
                 $gui = new AuctionFormGUI($this->plugin);
                 $gui->sendMainMenu($sender);
@@ -137,18 +138,23 @@ class AuctionCommand extends Command {
         $config = $this->plugin->getConfig();
         $auctionConfig = $config->get("auction");
         
-        if ($duration < $auctionConfig["min-duration"]) {
-            $player->sendMessage("§cDuration must be at least " . $auctionConfig["min-duration"] . " seconds!");
+        if (!is_array($auctionConfig)) {
+            $player->sendMessage("§cAuction configuration error!");
+            return;
+        }
+        
+        if ($duration < ($auctionConfig["min-duration"] ?? 300)) {
+            $player->sendMessage("§cDuration must be at least " . ($auctionConfig["min-duration"] ?? 300) . " seconds!");
             return;
         }
 
-        if ($duration > $auctionConfig["max-duration"]) {
-            $player->sendMessage("§cDuration cannot exceed " . $auctionConfig["max-duration"] . " seconds!");
+        if ($duration > ($auctionConfig["max-duration"] ?? 86400)) {
+            $player->sendMessage("§cDuration cannot exceed " . ($auctionConfig["max-duration"] ?? 86400) . " seconds!");
             return;
         }
 
-        if ($startingBid < $auctionConfig["min-starting-bid"]) {
-            $player->sendMessage("§cStarting bid must be at least " . $auctionConfig["min-starting-bid"] . "!");
+        if ($startingBid < ($auctionConfig["min-starting-bid"] ?? 1)) {
+            $player->sendMessage("§cStarting bid must be at least " . ($auctionConfig["min-starting-bid"] ?? 1) . "!");
             return;
         }
 

@@ -12,7 +12,16 @@ All notable changes to MazeShop will be documented in this file.
 - Fixed `LIME_STAINED_GLASS_PANE` and `RED_STAINED_GLASS_PANE` compatibility issues
 - Fixed `ORANGE_STAINED_GLASS_PANE` in auction GUI
 - **Fixed DatabaseManager crash** - Added null/array checks for config.yml database section
-- Added default values for database configuration using null coalescing operator
+- **Fixed all config array access crashes** - Added safety checks throughout the codebase:
+  - `DatabaseManager.php` - Database config access
+  - `EconomyManager.php` - Currency config access
+  - `AuctionManager.php` - Auction config access
+  - `AuctionCommand.php` - Auction settings validation
+  - `AuctionFormGUI.php` - Auction form validation
+  - `ShopCommand.php` - GUI type selection
+  - `AuctionCommand.php` - GUI type selection
+- Added default values using null coalescing operator for all config accesses
+- All config->get() calls now check if returned value is an array before accessing
 
 ### Changed
 - **Switched to InvMenu library for Chest GUIs** - More robust and feature-rich!
