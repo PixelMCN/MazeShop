@@ -22,11 +22,17 @@
 <details open>
 <summary><b>🛒 Shop System</b></summary>
 <br>
+
 - ✅ **Multi-level structure** - Category → Sub-category → Items
+
 - ✅ **Forms GUI** - Native Bedrock UI with image support
+
 - ✅ **Database sync** - MySQL support for cross-server synchronization
+
 - ✅ **Custom blocks** - Full support for custom blocks from other plugins
+
 - ✅ **Manual editing** - Edit `shop.yml` directly or use admin commands
+
 - ✅ **Direct access** - Use `/shop <category>` for instant navigation
 
 </details>
@@ -34,10 +40,15 @@
 <details open>
 <summary><b>🏆 Auction House</b></summary>
 <br>
+
 - ✅ **Player auctions** - Configurable duration and starting bids
+
 - ✅ **Real-time bidding** - Automatic refund system
+
 - ✅ **Forms GUI** - Easy-to-use bidding interface
+
 - ✅ **Expiration tracking** - Automatic auction ending
+
 - ✅ **Anti-spam** - Configurable auction fees
 
 </details>
@@ -45,8 +56,11 @@
 <details open>
 <summary><b>💰 Economy Integration</b></summary>
 <br>
+
 - ✅ **Auto-detection** - Supports MazePay or BedrockEconomy
+
 - ✅ **No balance storage** - All transactions handled by economy plugins
+
 - ✅ **Configurable currency** - Customize symbol and name
 
 </details>
@@ -54,8 +68,11 @@
 <details open>
 <summary><b>🎨 Highly Customizable</b></summary>
 <br>
+
 - ✅ **messages.yml** - Custom messages, placeholders, and colors
+
 - ✅ **config.yml** - Database, currency, auction settings
+
 - ✅ **shop.yml** - Complete shop structure with 188+ items
 
 </details>
@@ -63,10 +80,15 @@
 <details open>
 <summary><b>📱 Native Bedrock Forms</b></summary>
 <br>
+
 - ✅ **Native UI** - Bedrock's built-in form system
+
 - ✅ **Image support** - Custom texture icons
+
 - ✅ **Button-based** - Simple and intuitive navigation
+
 - ✅ **Custom input** - Easy amount selection
+
 - ✅ **Quick bidding** - Simple bid input
 
 </details>
