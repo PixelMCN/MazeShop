@@ -1,8 +1,16 @@
 --- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/PixelMCN/MazeShop
 build-by-default: true
 branches:
-- main
+  - main
+
 projects:
   MazeShop:
     path: ""
-...
+    model: default
+    type: plugin
+    libs:
+      - src: muqsit/InvMenu/InvMenu
+        version: ^4.0
+        shade: syntax
+    lint:
+      phpstan: false

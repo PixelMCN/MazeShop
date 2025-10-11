@@ -1,224 +1,153 @@
 # MazeShop Items Configuration
-# Authors: Pixelis0P & MazecraftMCN Team
-
-#      ___           ___           ___           ___           ___           ___           ___           ___   
-#     /\  \         /\  \         /\__\         /\__\         /\__\         /\  \         /\  \         /\  \  
-#    |::\  \       /::\  \       /::|  |       /:/ _/_       /:/ _/_        \:\  \       /::\  \       /::\  \ 
-#    |:|:\  \     /:/\:\  \     /:/:|  |      /:/ /\__\     /:/ /\  \        \:\  \     /:/\:\  \     /:/\:\__\
-#  __|:|\:\  \   /:/ /::\  \   /:/|:|  |__   /:/ /:/ _/_   /:/ /::\  \   ___ /::\  \   /:/  \:\  \   /:/ /:/  /
-# /::::|_\:\__\ /:/_/:/\:\__\ /:/ |:| /\__\ /:/_/:/ /\__\ /:/_/:/\:\__\ /\  /:/\:\__\ /:/__/ \:\__\ /:/_/:/  / 
-# \:\~~\  \/__/ \:\/:/  \/__/ \/__|:|/:/  / \:\/:/ /:/  / \:\/:/ /:/  / \:\/:/  \/__/ \:\  \ /:/  / \:\/:/  /  
-#  \:\  \        \::/__/          |:/:/  /   \::/_/:/  /   \::/ /:/  /   \::/__/       \:\  /:/  /   \::/__/   
-#   \:\  \        \:\  \          |::/  /     \:\/:/  /     \/_/:/  /     \:\  \        \:\/:/  /     \:\  \   
-#    \:\__\        \:\__\         |:/  /       \::/  /        /:/  /       \:\__\        \::/  /       \:\__\  
-#     \/__/         \/__/         |/__/         \/__/         \/__/         \/__/         \/__/         \/__/   
-
-# Category Configuration
-# Each category can have:
-# - name: Display name of the category
-# - icon: Item to display as category icon (item ID or name)
-# - image: URL to image for form button (optional, leave empty for no image)
-# - items: List of items in this category
+# Structure: Category -> Sub-category -> Items
+# Developed by PixelMCN
 
 categories:
-  - name: "Blocks"
-    icon: "stone"
-    image: "textures/blocks/stone"
-    items:
-      - item: "stone"
-        buy_price: 2.0
-        sell_price: 1.0
-        image: ""
-      - item: "cobblestone"
-        buy_price: 1.5
-        sell_price: 0.5
-        image: ""
-      - item: "dirt"
-        buy_price: 0.5
-        sell_price: 0.25
-        image: ""
-      - item: "grass_block"
-        buy_price: 1.0
-        sell_price: 0.5
-        image: ""
-      - item: "sand"
-        buy_price: 2.0
-        sell_price: 1.0
-        image: ""
-      - item: "gravel"
-        buy_price: 2.0
-        sell_price: 1.0
-        image: ""
-      - item: "glass"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
-      - item: "brick_block"
-        buy_price: 10.0
-        sell_price: 5.0
-        image: ""
-      - item: "obsidian"
-        buy_price: 50.0
-        sell_price: 25.0
-        image: ""
+  Stone:
+    display-name: "§aStone Materials"
+    icon: "minecraft:stone"
+    subcategories:
+      "Cobble Stone":
+        display-name: "§eCobblestone Items"
+        icon: "minecraft:cobblestone"
+        items:
+          - id: "minecraft:cobblestone"
+            meta: 0
+            name: "§fCobblestone"
+            description: "Basic building block"
+            buy-price: 10
+            sell-price: 5
+            amount: 1
+          - id: "minecraft:stone"
+            meta: 0
+            name: "§fStone"
+            description: "Smooth stone block"
+            buy-price: 15
+            sell-price: 7
+            amount: 1
+          - id: "minecraft:stone_stairs"
+            meta: 0
+            name: "§fStone Stairs"
+            description: "Stone stairs for building"
+            buy-price: 20
+            sell-price: 10
+            amount: 1
+          - id: "minecraft:smooth_stone"
+            meta: 0
+            name: "§fSmooth Stone"
+            description: "Polished smooth stone"
+            buy-price: 25
+            sell-price: 12
+            amount: 1
 
-  - name: "Wood"
-    icon: "oak_log"
-    image: "textures/blocks/oak_log"
-    items:
-      - item: "oak_log"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
-      - item: "spruce_log"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
-      - item: "birch_log"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
-      - item: "jungle_log"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
-      - item: "acacia_log"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
-      - item: "dark_oak_log"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
-      - item: "oak_planks"
-        buy_price: 2.0
-        sell_price: 1.0
-        image: ""
-      - item: "spruce_planks"
-        buy_price: 2.0
-        sell_price: 1.0
-        image: ""
+  Wood:
+    display-name: "§6Wood Materials"
+    icon: "minecraft:oak_log"
+    subcategories:
+      "Oak Wood":
+        display-name: "§eOak Wood Items"
+        icon: "minecraft:oak_log"
+        items:
+          - id: "minecraft:oak_log"
+            meta: 0
+            name: "§fOak Log"
+            description: "Oak wood log"
+            buy-price: 30
+            sell-price: 15
+            amount: 1
+          - id: "minecraft:oak_planks"
+            meta: 0
+            name: "§fOak Planks"
+            description: "Oak wood planks"
+            buy-price: 20
+            sell-price: 10
+            amount: 1
+      "Birch Wood":
+        display-name: "§eBirch Wood Items"
+        icon: "minecraft:birch_log"
+        items:
+          - id: "minecraft:birch_log"
+            meta: 0
+            name: "§fBirch Log"
+            description: "Birch wood log"
+            buy-price: 30
+            sell-price: 15
+            amount: 1
+          - id: "minecraft:birch_planks"
+            meta: 0
+            name: "§fBirch Planks"
+            description: "Birch wood planks"
+            buy-price: 20
+            sell-price: 10
+            amount: 1
 
-  - name: "Food"
-    icon: "cooked_beef"
-    image: "textures/items/bread"
-    items:
-      - item: "apple"
-        buy_price: 5.0
-        sell_price: 2.0
-        image: ""
-      - item: "bread"
-        buy_price: 10.0
-        sell_price: 5.0
-        image: ""
-      - item: "cooked_beef"
-        buy_price: 15.0
-        sell_price: 7.5
-        image: ""
-      - item: "cooked_porkchop"
-        buy_price: 15.0
-        sell_price: 7.5
-        image: ""
-      - item: "cooked_chicken"
-        buy_price: 12.0
-        sell_price: 6.0
-        image: ""
-      - item: "cooked_mutton"
-        buy_price: 12.0
-        sell_price: 6.0
-        image: ""
-      - item: "golden_apple"
-        buy_price: 100.0
-        sell_price: 50.0
-        image: ""
+  Ores:
+    display-name: "§bOres & Minerals"
+    icon: "minecraft:diamond"
+    subcategories:
+      "Common Ores":
+        display-name: "§eCommon Ores"
+        icon: "minecraft:iron_ingot"
+        items:
+          - id: "minecraft:coal"
+            meta: 0
+            name: "§fCoal"
+            description: "Fuel and crafting material"
+            buy-price: 50
+            sell-price: 25
+            amount: 1
+          - id: "minecraft:iron_ingot"
+            meta: 0
+            name: "§fIron Ingot"
+            description: "Iron ingot for crafting"
+            buy-price: 100
+            sell-price: 50
+            amount: 1
+      "Rare Ores":
+        display-name: "§eRare Ores"
+        icon: "minecraft:diamond"
+        items:
+          - id: "minecraft:diamond"
+            meta: 0
+            name: "§bDiamond"
+            description: "Precious diamond"
+            buy-price: 500
+            sell-price: 250
+            amount: 1
+          - id: "minecraft:emerald"
+            meta: 0
+            name: "§aEmerald"
+            description: "Rare emerald"
+            buy-price: 1000
+            sell-price: 500
+            amount: 1
 
-  - name: "Tools"
-    icon: "diamond_pickaxe"
-    image: "textures/items/diamond_pickaxe"
-    items:
-      - item: "wooden_pickaxe"
-        buy_price: 10.0
-        sell_price: 5.0
-        image: ""
-      - item: "stone_pickaxe"
-        buy_price: 20.0
-        sell_price: 10.0
-        image: ""
-      - item: "iron_pickaxe"
-        buy_price: 50.0
-        sell_price: 25.0
-        image: ""
-      - item: "diamond_pickaxe"
-        buy_price: 200.0
-        sell_price: 100.0
-        image: ""
-      - item: "wooden_axe"
-        buy_price: 10.0
-        sell_price: 5.0
-        image: ""
-      - item: "stone_axe"
-        buy_price: 20.0
-        sell_price: 10.0
-        image: ""
-      - item: "iron_axe"
-        buy_price: 50.0
-        sell_price: 25.0
-        image: ""
-      - item: "diamond_axe"
-        buy_price: 200.0
-        sell_price: 100.0
-        image: ""
-
-  - name: "Armor"
-    icon: "diamond_chestplate"
-    image: "textures/items/diamond_chestplate"
-    items:
-      - item: "leather_helmet"
-        buy_price: 20.0
-        sell_price: 10.0
-        image: ""
-      - item: "leather_chestplate"
-        buy_price: 30.0
-        sell_price: 15.0
-        image: ""
-      - item: "leather_leggings"
-        buy_price: 25.0
-        sell_price: 12.5
-        image: ""
-      - item: "leather_boots"
-        buy_price: 15.0
-        sell_price: 7.5
-        image: ""
-      - item: "iron_helmet"
-        buy_price: 100.0
-        sell_price: 50.0
-        image: ""
-      - item: "iron_chestplate"
-        buy_price: 150.0
-        sell_price: 75.0
-        image: ""
-      - item: "diamond_helmet"
-        buy_price: 400.0
-        sell_price: 200.0
-        image: ""
-      - item: "diamond_chestplate"
-        buy_price: 600.0
-        sell_price: 300.0
-        image: ""
-
-  - name: "Potions"
-    icon: "potion"
-    image: "textures/items/potion"
-    items:
-      - item: "glass_bottle"
-        buy_price: 5.0
-        sell_price: 2.0
-        image: ""
-      - item: "potion"
-        buy_price: 20.0
-        sell_price: 10.0
-        image: ""
-      - item: "splash_potion"
-        buy_price: 30.0
-        sell_price: 15.0
-        image: ""
+  Food:
+    display-name: "§cFood & Farming"
+    icon: "minecraft:apple"
+    subcategories:
+      "Basic Food":
+        display-name: "§eBasic Food Items"
+        icon: "minecraft:bread"
+        items:
+          - id: "minecraft:apple"
+            meta: 0
+            name: "§fApple"
+            description: "Restores hunger"
+            buy-price: 20
+            sell-price: 10
+            amount: 1
+          - id: "minecraft:bread"
+            meta: 0
+            name: "§fBread"
+            description: "Basic food item"
+            buy-price: 30
+            sell-price: 15
+            amount: 1
+          - id: "minecraft:cooked_beef"
+            meta: 0
+            name: "§fCooked Beef"
+            description: "Cooked meat"
+            buy-price: 50
+            sell-price: 25
+            amount: 1

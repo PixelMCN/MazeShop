@@ -1,410 +1,298 @@
-# 🛒 MazeShop - Shop Plugin for PocketMine-MP
+# MazeShop - Advanced Shop & Auction System
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![API](https://img.shields.io/badge/PocketMine--MP-5.0.0+-green.svg)
-![PHP](https://img.shields.io/badge/PHP-8.4+-purple.svg)
+**Version:** 1.0.1  
+**Developer:** PixelMCN  
+**PocketMine-MP:** 5.0.0+  
+**PHP:** 8.4+
 
-A feature-rich shop plugin for PocketMine-MP servers with beautiful form-based UI and full MazePay integration.
+## Features
 
-**Authors:** Pixelis0P & MazecraftMCN Team
+### 🛒 Shop System
+- **Multi-level structure**: Category → Sub-category → Items
+- **Dual GUI support**: Forms GUI and beautiful Chest GUI (both built-in, no external plugins needed)
+- **Database sync**: MySQL support for cross-server shop synchronization
+- **Custom blocks**: Full support for custom blocks from other plugins
+- **Manual editing**: Edit `shop.yml` directly or use admin commands
 
----
+### 🏆 Auction House
+- Players can create auctions with configurable duration
+- Real-time bidding system with automatic refunds
+- Separate GUI type configuration (Forms or Chest)
+- Auction expiration tracking with automatic ending
+- Auction fees to prevent spam
 
-## 📋 Table of Contents
-- [Features](#-features)
-- [Requirements](#-requirements)
-- [Installation](#-installation)
-- [Commands](#-commands)
-- [Permissions](#-permissions)
-- [Configuration](#%EF%B8%8F-configuration)
-- [Shop Configuration](#-shop-configuration)
-- [FAQ](#-faq)
-- [Support](#-support)
+### 💰 Economy Integration
+- **Auto-detection**: Automatically detects MazePay or BedrockEconomy
+- **No balance storage**: All transactions handled by economy plugins
+- **Configurable currency**: Customize currency symbol and name
 
----
+### 🎨 Highly Customizable
+- **messages.yml**: Fully customizable messages, placeholders, form text, and GUI images
+- **config.yml**: Configure database, GUI types, currency, auction settings
+- **shop.yml**: Complete shop structure with prices, descriptions, icons
 
-## ✨ Features
+### ✨ Beautiful Chest GUI (Built-in)
+- **No external plugins required** - Custom inventory system built from scratch
+- **Elegant design** with decorative borders and glass panes
+- **Color-coded actions** - Green for buy, red for sell
+- **Smart navigation** - Back buttons, close buttons, pagination
+- **Quick actions** - Buy/sell x1, x16, x64 with one click
+- **Bid options** - Multiple bid increments (+$10, +$50, +$100, +$500)
+- **Real-time info** - See prices, time remaining, current bids instantly
 
-### 🛍️ **Shop System**
-- Beautiful form-based GUI for easy shopping
-- Category-based organization (Wood, Blocks, Food, Tools, Armor, Potions, etc.)
-- Buy and sell items with customizable prices
-- Custom images for categories and items
+## Installation
 
-### 💰 **Selling System**
-- `/sell <amount>` - Sell specific amount from hand
-- `/sell invall` - Sell all matching items from inventory
-- Confirmation dialog for bulk sales
-- Instant price calculation
+1. Download the latest release
+2. Place `MazeShop.phar` in your `plugins` folder
+3. Install **[InvMenu](https://poggit.pmmp.io/p/InvMenu)** (REQUIRED for Chest GUI)
+4. Install either **[MazePay](https://github.com/PixelMCN/MazePay)** or **BedrockEconomy** economy plugin (REQUIRED)
+5. (Optional) Configure MySQL in `config.yml` for cross-server sync
+6. Restart your server
 
-### 👑 **Admin Controls**
-- `/shop disable` - Disable shop for non-OPs
-- `/shop enable` - Re-enable shop access
-- Operators can always access shop even when disabled
+**Required Dependencies:**
+- InvMenu (for Chest GUI functionality)
+- MazePay OR BedrockEconomy (for economy integration)
 
-### 🔗 **MazePay Integration**
-- Full integration with MazePay economy plugin
-- Automatic wallet balance checking
-- Seamless money transactions
-- Uses MazePay's currency formatting
+**Note:** The plugin will automatically disable if no economy plugin (MazePay or BedrockEconomy) is found.
 
-### 🎨 **Highly Customizable**
-- Two separate config files (`config.yml` and `shop.yml`)
-- Customize all messages, colors, and prefixes
-- Add/remove/modify categories and items
-- Set custom prices for buying and selling
-- Add custom button images (URLs)
-- Version control for easy updates
+## Configuration
 
----
-
-## 📦 Requirements
-
-- **PocketMine-MP:** 5.0.0 or higher
-- **PHP:** 8.4 or higher
-- **MazePay:** Required for economy system
-
----
-
-## 📥 Installation
-
-1. **Install MazePay** first (if not already installed)
-2. **Download** the latest `MazeShop.phar` from [Releases](https://github.com/Pixelis0P/MazeShop/releases)
-3. **Place** the `.phar` file in your server's `plugins/` folder
-4. **Restart** your server
-5. **Configure** the plugin by editing:
-   - `plugins/MazeShop/config.yml` (Messages and settings)
-   - `plugins/MazeShop/shop.yml` (Items and prices)
-6. **Restart** again to apply changes
-7. **Enjoy!** 🎉
-
----
-
-## 📝 Commands
-
-### 👤 Player Commands
-| Command | Description | Usage |
-|---------|-------------|-------|
-| `/shop` | Open shop category list | `/shop` |
-| `/shop <category>` | Open specific category | `/shop wood` |
-| `/sell <amount>` | Sell items from hand | `/sell 64` |
-| `/sell invall` | Sell all matching items | `/sell invall` |
-
-### 👑 Admin Commands
-| Command | Description | Permission |
-|---------|-------------|------------|
-| `/shop disable` | Disable shop for players | `mazeshop.command.shop.admin` |
-| `/shop enable` | Enable shop for players | `mazeshop.command.shop.admin` |
-| `/shopadmin` | Open shop management GUI | `mazeshop.command.admin` |
-
-**Shop Management Features:**
-- **Create/Delete/Edit Categories** - Full category management
-- **Add/Remove/Edit Items** - Manage items in each category
-- **Edit Prices** - Change buy/sell prices on the fly
-- **Custom Images** - Set image URLs for categories and items
-- **Real-time Updates** - Changes saved instantly to shop.yml
-
----
-
-## 🔐 Permissions
-
+### config.yml
 ```yaml
-mazeshop.command.shop         # Use /shop command (default: true)
-mazeshop.command.shop.admin   # Admin shop controls (default: op)
-mazeshop.command.sell         # Use /sell command (default: true)
-mazeshop.command.admin        # Use /shopadmin for shop management (default: op)
+gui:
+  shop-type: "form"      # "form" or "chest"
+  auction-type: "form"   # "form" or "chest"
+
+currency:
+  symbol: "$"
+  name: "Money"
+
+database:
+  enabled: true          # Enable MySQL sync
+  host: "localhost"
+  port: 3306
+  username: "root"
+  password: ""
+  database: "mazeshop"
+  sync-interval: 300     # Seconds
+
+auction:
+  min-duration: 300      # 5 minutes
+  max-duration: 86400    # 24 hours
+  min-starting-bid: 1
+  auction-fee: 5         # 5% fee
+  max-auctions-per-player: 5
 ```
 
----
-
-## ⚙️ Configuration
-
-### **config.yml** - General Settings & Messages
-
-```yaml
-# Plugin Settings
-prefix: "§b[MazeShop]§r "
-shop-enabled: true
-
-# Messages
-messages:
-  no-permission: "§cYou don't have permission!"
-  shop-disabled: "§cThe shop is currently disabled!"
-  buy-success: "§aYou bought §e{amount}x {item} §afor §e{price}§a!"
-  sell-success: "§aYou sold §e{amount}x {item} §afor §e{price}§a!"
-  # ... and many more customizable messages
-```
-
-**Tip:** All messages support Minecraft color codes (§)!
-
----
-
-## 🏪 Shop Configuration
-
-### **shop.yml** - Items & Prices
-
-The `shop.yml` file controls all shop categories and items:
-
+### shop.yml
 ```yaml
 categories:
-  - name: "Wood"
-    icon: "oak_log"
-    image: "https://i.imgur.com/wood-icon.png"
-    items:
-      - item: "oak_log"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
-      - item: "spruce_log"
-        buy_price: 5.0
-        sell_price: 2.5
-        image: ""
+  Stone:
+    display-name: "§aStone Materials"
+    icon: "minecraft:stone"
+    subcategories:
+      "Cobble Stone":
+        display-name: "§eCobblestone Items"
+        icon: "minecraft:cobblestone"
+        items:
+          - id: "minecraft:cobblestone"
+            meta: 0
+            name: "§fCobblestone"
+            description: "Basic building block"
+            buy-price: 10
+            sell-price: 5
+            amount: 1
 ```
 
-### **Category Properties:**
-- `name` - Display name of the category
-- `icon` - Item to represent the category
-- `image` - URL to button image (optional)
-- `items` - List of items in this category
+## Commands
 
-### **Item Properties:**
-- `item` - Item ID (use PocketMine item names)
-- `buy_price` - Price players pay to buy
-- `sell_price` - Price players receive when selling
-- `image` - URL to item image (optional)
+### Player Commands
+| Command | Description | Permission |
+|---------|-------------|------------|
+| `/shop` | Open main shop | `mazeshop.use` |
+| `/shop category <name>` | Open specific category | `mazeshop.use` |
+| `/shop buy <item> <amount>` | Quick buy item | `mazeshop.use` |
+| `/shop sell <item> <amount>` | Quick sell item | `mazeshop.use` |
+| `/shop help` | Display help | `mazeshop.use` |
+| `/auction` | Open auction house | `mazeshop.auction.use` |
+| `/auction list` | List active auctions | `mazeshop.auction.use` |
+| `/auction bid <id> <amount>` | Place a bid | `mazeshop.auction.use` |
+| `/auction create <startingBid> <duration>` | Create auction | `mazeshop.auction.use` |
+| `/auction view <id>` | View auction details | `mazeshop.auction.use` |
 
-### **Adding New Categories:**
+### Admin Commands
+| Command | Description | Permission |
+|---------|-------------|------------|
+| `/shopadmin addcategory <name>` | Add category | `mazeshop.admin` |
+| `/shopadmin removecategory <name>` | Remove category | `mazeshop.admin` |
+| `/shopadmin addsubcategory <cat> <name>` | Add sub-category | `mazeshop.admin` |
+| `/shopadmin removesubcategory <cat> <name>` | Remove sub-category | `mazeshop.admin` |
+| `/shopadmin additem <cat> <sub> <price> [sellprice]` | Add item (hold in hand) | `mazeshop.admin` |
+| `/shopadmin removeitem <cat> <sub> <item>` | Remove item | `mazeshop.admin` |
+| `/shopadmin reload` | Reload configs | `mazeshop.admin` |
+| `/auctionadmin remove <id>` | Cancel auction | `mazeshop.auction.admin` |
+| `/auctionadmin end <id>` | Force end auction | `mazeshop.auction.admin` |
+
+## Permissions
 
 ```yaml
-- name: "Custom Category"
-  icon: "diamond"
-  image: ""
-  items:
-    - item: "diamond"
-      buy_price: 100.0
-      sell_price: 50.0
-      image: ""
+mazeshop.use: true                    # Use shop commands
+mazeshop.admin: op                    # Admin commands
+mazeshop.auction.use: true            # Use auction system
+mazeshop.auction.admin: op            # Auction admin commands
+mazeshop.category.edit: op            # Edit categories
 ```
 
-### **Adding New Items:**
+## API & Events
 
-Just add to the `items:` list under any category:
+MazeShop provides a comprehensive API for developers:
 
-```yaml
-- item: "emerald"
-  buy_price: 150.0
-  sell_price: 75.0
-  image: "https://i.imgur.com/emerald.png"
+### Events
+```php
+use PixelMCN\MazeShop\event\ItemPurchaseEvent;
+use PixelMCN\MazeShop\event\ItemSellEvent;
+use PixelMCN\MazeShop\event\AuctionCreateEvent;
+use PixelMCN\MazeShop\event\AuctionBidEvent;
+use PixelMCN\MazeShop\event\AuctionEndEvent;
+use PixelMCN\MazeShop\event\CustomBlockShopAddEvent;
+
+// Example: Add bonus on purchase
+public function onPurchase(ItemPurchaseEvent $event): void {
+    $player = $event->getPlayer();
+    $item = $event->getItem();
+    $amount = $event->getAmount();
+    
+    // Add 10% discount
+    $event->setTotalPrice($event->getTotalPrice() * 0.9);
+}
 ```
 
----
+### API Usage
+```php
+use PixelMCN\MazeShop\Main;
 
-## 🎮 How to Use
+// Get plugin instance
+$mazeShop = Main::getInstance();
 
-### **For Players:**
+// Access managers
+$shopManager = $mazeShop->getShopManager();
+$auctionManager = $mazeShop->getAuctionManager();
+$economyManager = $mazeShop->getEconomyManager();
 
-1. **Open Shop:**
-   ```
-   /shop
-   ```
-   Browse categories and select items to buy/sell
+// Get shop data
+$categories = $shopManager->getCategories();
+$category = $shopManager->getCategory("Stone");
 
-2. **Open Specific Category:**
-   ```
-   /shop wood
-   /shop food
-   /shop tools
-   ```
+// Search for item
+$itemData = $shopManager->searchItem("Diamond");
 
-3. **Sell Items from Hand:**
-   ```
-   /sell 32    # Sells 32 items
-   /sell 64    # Sells 64 items
-   ```
-
-4. **Sell All Matching Items:**
-   ```
-   /sell invall
-   ```
-   Opens confirmation dialog showing total items and price
-
-### **For Admins:**
-
-1. **Disable Shop:**
-   ```
-   /shop disable
-   ```
-   Players cannot access shop (OPs still can)
-
-2. **Enable Shop:**
-   ```
-   /shop enable
-   ```
-   Re-enable shop access for everyone
-
-3. **Manage Shop (GUI):**
-   ```
-   /shopadmin
-   ```
-   Opens the shop management interface where you can:
-   - **Create new categories** with custom icons and images
-   - **Edit existing categories** (rename, change icon, update image)
-   - **Delete categories** (removes all items inside)
-   - **Add items to categories** with buy/sell prices
-   - **Edit item prices** and images
-   - **Delete items** from categories
-   
-   All changes are saved instantly to `shop.yml`!
-
----
-
-## ❓ FAQ
-
-### **Q: Does this require MazePay?**
-**A:** Yes! MazePay is required for the economy system. MazeShop integrates directly with MazePay's wallet system.
-
-### **Q: Can I add custom items?**
-**A:** Yes! You can either edit `shop.yml` manually or use the `/shopadmin` command for a user-friendly GUI to add items. Use PocketMine's item names (e.g., `diamond_sword`, `cooked_beef`, etc.)
-
-### **Q: How do I change prices?**
-**A:** You can either edit `shop.yml` manually or use `/shopadmin` GUI → Select category → Manage Items → Select item → Edit Prices.
-
-### **Q: Can players sell items not in the shop?**
-**A:** No, only items configured in `shop.yml` with a `sell_price > 0` can be sold.
-
-### **Q: What happens if a player tries to buy with insufficient funds?**
-**A:** They receive an error message showing how much money they need.
-
-### **Q: Can I use custom images for buttons?**
-**A:** Yes! Add image URLs in the `image` field for categories or items in `shop.yml`. Leave empty `""` for text-only buttons.
-
-### **Q: Does /sell invall work with enchanted items?**
-**A:** Yes, it counts all items of the same type regardless of enchantments (when using `equals` with ignoreNBT).
-
-### **Q: How do I remove a category?**
-**A:** Use `/shopadmin` → Select the category → Delete Category. Or manually delete it from `shop.yml` and restart.
-
----
-
-## 📊 File Structure
-
-```
-MazeShop/
-├── plugin.yml
-├── resources/
-│   ├── config.yml
-│   └── shop.yml
-└── src/
-    └── Pixelis0P/
-        └── MazeShop/
-            ├── MazeShop.php
-            ├── commands/
-            │   ├── ShopCommand.php
-            │   ├── SellCommand.php
-            │   └── ShopAdminCommand.php
-            ├── forms/
-            │   ├── CategoryListForm.php
-            │   ├── ShopForm.php
-            │   ├── BuySellForm.php
-            │   ├── SellConfirmForm.php
-            │   └── admin/
-            │       ├── CategoryManageForm.php
-            │       ├── CategoryCreateForm.php
-            │       ├── CategoryEditForm.php
-            │       ├── CategoryEditInfoForm.php
-            │       ├── CategoryDeleteForm.php
-            │       ├── ItemManageForm.php
-            │       ├── ItemCreateForm.php
-            │       ├── ItemEditForm.php
-            │       ├── ItemEditPriceForm.php
-            │       └── ItemDeleteForm.php
-            └── utils/
-                └── ItemUtils.php
+// Get auctions
+$auctions = $auctionManager->getAllAuctions();
+$playerAuctions = $auctionManager->getPlayerAuctions("PlayerName");
 ```
 
+## Database Structure
+
+If MySQL sync is enabled, MazeShop creates three tables:
+
+### mazeshop_categories
+- `id` - Auto-increment primary key
+- `name` - Unique category name
+- `display_name` - Display name
+- `icon` - Icon texture path
+- `created_at` - Timestamp
+
+### mazeshop_subcategories
+- `id` - Auto-increment primary key
+- `category_name` - Foreign key to categories
+- `name` - Sub-category name
+- `display_name` - Display name
+- `icon` - Icon texture path
+- `created_at` - Timestamp
+
+### mazeshop_items
+- `id` - Auto-increment primary key
+- `category_name` - Category reference
+- `subcategory_name` - Sub-category reference
+- `item_id` - Minecraft item ID
+- `meta` - Item metadata
+- `name` - Item display name
+- `description` - Item description
+- `buy_price` - Purchase price
+- `sell_price` - Selling price
+- `amount` - Item stack amount
+- `created_at` / `updated_at` - Timestamps
+
+## Support
+
+- **Issues**: [GitHub Issues](https://github.com/PixelMCN/MazeShop/issues)
+- **Discord**: [PixelMCN Discord](https://discord.gg/pixelmcn)
+
+## Credits
+
+**Developed by PixelMCN**
+
+## License
+
+See [LICENSE](LICENSE) file for details.
+
 ---
 
-## 📜 Example Usage
+### Quick Start Example
 
-### Player Shopping Experience:
+1. Start server with MazeShop installed
+2. Player types `/shop` to open shop GUI
+3. Browse categories and purchase items
+4. Type `/auction` to access auction house
+5. Hold item and type `/auction create 100 3600` to create 1-hour auction
+6. Other players can bid using `/auction bid <id> <amount>`
+
+### Admin Quick Start
+
+```bash
+# Add a new category
+/shopadmin addcategory Tools
+
+# Add a sub-category
+/shopadmin addsubcategory Tools Pickaxes
+
+# Add an item (hold diamond pickaxe)
+/shopadmin additem Tools Pickaxes 500 250
+
+# Reload configuration
+/shopadmin reload
 ```
-Player: /shop
-→ Opens category list (Wood, Blocks, Food, Tools, Armor, Potions)
 
-Player: Clicks "Wood"
-→ Shows all wood items with prices
+## Troubleshooting
 
-Player: Clicks "Oak Log"
-→ Form with Buy/Sell options and amount input
+**Shop not opening?**
+- Ensure economy plugin (MazePay or BedrockEconomy) is installed
+- Check permissions: `mazeshop.use`
 
-Player: Selects "Buy", enters "64"
-→ Buys 64 oak logs for $320.00
-→ Money deducted from wallet
-→ Items added to inventory
-```
+**Database sync not working?**
+- Verify MySQL credentials in `config.yml`
+- Check server logs for connection errors
+- Ensure MySQL server is running and accessible
 
-### Selling Items:
-```
-Player: Holds dirt, types /sell 64
-→ Opens confirmation: "Sell 64x Dirt for $16.00?"
-→ Player clicks "Yes"
-→ 64 dirt removed from inventory
-→ $16.00 added to wallet
+**Items not showing in shop?**
+- Check `shop.yml` syntax (YAML is strict about indentation)
+- Use `/shopadmin reload` after manual edits
+- Review server logs for parsing errors
 
-Player: Types /sell invall
-→ Counts all dirt in inventory (e.g., 320 total)
-→ "Sell 320x Dirt for $80.00?"
-→ Confirms and sells all
-```
+**Plugin disabled on startup?**
+- Check if MazePay or BedrockEconomy is installed and enabled
+- The plugin requires one of these economy plugins to function
+- Check server logs for economy plugin errors
 
----
+## Performance
 
-## 🐛 Known Issues
-
-None at the moment! Report bugs on [GitHub Issues](https://github.com/Pixelis0P/MazeShop/issues).
+MazeShop is optimized for:
+- ✅ Multiple servers with database sync
+- ✅ Async database operations
+- ✅ Cached shop data in memory
+- ✅ Efficient auction expiration checking
+- ✅ No unnecessary file I/O operations
 
 ---
 
-## 🤝 Support
-
-Need help? Found a bug? Have a suggestion?
-
-- **GitHub Issues:** [Report Issues](https://github.com/Pixelis0P/MazeShop/issues)
-- **Discord:** [Join our Discord](#)
-- **Wiki:** [Read the Wiki](https://github.com/Pixelis0P/MazeShop/wiki)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 🌟 Contributing
-
-Contributions are welcome! Please submit Pull Requests.
-
----
-
-## 💖 Credits
-
-**Developed by:**
-- **Pixelis0P** - Lead Developer
-- **MazecraftMCN Team** - Development Team
-
-**Special Thanks:**
-- MazePay for economy integration
-- PocketMine-MP Team
-
----
-
-<div align="center">
-
-### ⭐ If you like MazeShop, please star the repository!
-
-**Made with ❤️ by Pixelis0P & MazecraftMCN Team**
-
-[⬆ Back to Top](#-mazeshop---shop-plugin-for-pocketmine-mp)
-
-</div>
+**Thank you for using MazeShop!** 🎉

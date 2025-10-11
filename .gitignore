@@ -1,0 +1,23 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Composer
+vendor/
+composer.lock
+
+# Build
+*.phar
+
+# Plugin Data
+plugin_data/
+auctions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+composer.json

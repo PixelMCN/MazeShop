@@ -1,25 +1,26 @@
 name: MazeShop
-version: 1.0.0
-main: Pixelis0P\MazeShop\MazeShop
+version: 1.0.1
+main: PixelMCN\MazeShop\Main
 api: 5.0.0
-author: Pixelis0P & MazecraftMCN Team
-description: A comprehensive shop plugin for PocketMine-MP with MazePay integration
-website: https://github.com/PixelMCN/MazeShop
-depend: [MazePay]
+author: PixelMCN
+description: Advanced shop and auction system with multi-level categories and economy integration
+github: https://github.com/PixelMCN/MazeShop
+website: https://mazecraftmc.fun
+softdepend: [MazePay, BedrockEconomy]
 
 permissions:
-  mazeshop.command.shop:
-    description: Allows usage of /shop command
+  mazeshop.use:
+    description: Allow using shop commands
     default: true
-  
-  mazeshop.command.shop.admin:
-    description: Allows usage of /shop disable/enable and bypass shop disabled
+  mazeshop.admin:
+    description: Allow using shop admin commands
     default: op
-  
-  mazeshop.command.sell:
-    description: Allows usage of /sell command
+  mazeshop.auction.use:
+    description: Allow using auction commands
     default: true
-  
-  mazeshop.command.admin:
-    description: Allows usage of /shopadmin command to manage shop
+  mazeshop.auction.admin:
     default: op
+  mazeshop.category.edit:
+    description: Allow editing shop categories
+    default: op
+

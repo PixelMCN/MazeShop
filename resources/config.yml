@@ -1,59 +1,53 @@
 # MazeShop Configuration File
-# Authors: Pixelis0P & MazecraftMCN Team
+# Developed by PixelMCN
 
-#      ___           ___           ___           ___           ___           ___           ___           ___   
-#     /\  \         /\  \         /\__\         /\__\         /\__\         /\  \         /\  \         /\  \  
-#    |::\  \       /::\  \       /::|  |       /:/ _/_       /:/ _/_        \:\  \       /::\  \       /::\  \ 
-#    |:|:\  \     /:/\:\  \     /:/:|  |      /:/ /\__\     /:/ /\  \        \:\  \     /:/\:\  \     /:/\:\__\
-#  __|:|\:\  \   /:/ /::\  \   /:/|:|  |__   /:/ /:/ _/_   /:/ /::\  \   ___ /::\  \   /:/  \:\  \   /:/ /:/  /
-# /::::|_\:\__\ /:/_/:/\:\__\ /:/ |:| /\__\ /:/_/:/ /\__\ /:/_/:/\:\__\ /\  /:/\:\__\ /:/__/ \:\__\ /:/_/:/  / 
-# \:\~~\  \/__/ \:\/:/  \/__/ \/__|:|/:/  / \:\/:/ /:/  / \:\/:/ /:/  / \:\/:/  \/__/ \:\  \ /:/  / \:\/:/  /  
-#  \:\  \        \::/__/          |:/:/  /   \::/_/:/  /   \::/ /:/  /   \::/__/       \:\  /:/  /   \::/__/   
-#   \:\  \        \:\  \          |::/  /     \:\/:/  /     \/_/:/  /     \:\  \        \:\/:/  /     \:\  \   
-#    \:\__\        \:\__\         |:/  /       \::/  /        /:/  /       \:\__\        \::/  /       \:\__\  
-#     \/__/         \/__/         |/__/         \/__/         \/__/         \/__/         \/__/         \/__/   
+# GUI Settings
+gui:
+  # Shop GUI Type: "form" or "chest"
+  shop-type: "chest"
+  # Auction GUI Type: "form" or "chest"
+  auction-type: "form"
 
-# Plugin prefix shown in messages
-prefix: "§b[MazeShop]§r "
+# Currency Settings
+currency:
+  symbol: "$"
+  name: "Money"
 
-# Shop enabled status (can be toggled with /shop disable/enable)
-shop-enabled: true
+# Database Settings (MySQL only)
+database:
+  # Enable MySQL sync for shop items across servers
+  enabled: false
+  host: "localhost"
+  port: 3306
+  username: "root"
+  password: ""
+  database: "mazeshop"
+  # Sync interval in seconds (how often to sync shop data)
+  sync-interval: 300
 
-# Messages
-messages:
-  # General messages
-  no-permission: "§cYou don't have permission to use this command!"
-  player-only: "§cThis command can only be used by players!"
-  shop-disabled: "§cThe shop is currently disabled!"
-  mazepay-not-found: "§cMazePay plugin is not installed! Shop cannot function."
-  
-  # Shop command
-  shop-usage: "§cUsage: /shop <category> or /shop <disable/enable>"
-  category-not-found: "§cCategory '§e{category}§c' not found!"
-  category-list: "§eAvailable categories: §a{categories}"
-  
-  # Shop GUI
-  shop-title: "§l§b{category} Shop"
-  item-buy-lore: "§7Buy Price: §a{buy_price}\n§7Sell Price: §c{sell_price}\n\n§eClick to buy/sell"
-  
-  # Buy/Sell
-  buy-success: "§aYou bought §e{amount}x {item} §afor §e{price}§a!"
-  buy-insufficient-money: "§cYou don't have enough money! Need §e{price}§c."
-  buy-inventory-full: "§cYour inventory is full!"
-  sell-success: "§aYou sold §e{amount}x {item} §afor §e{price}§a!"
-  sell-no-item: "§cYou don't have any §e{item} §cto sell!"
-  sell-not-sellable: "§cThis item cannot be sold!"
-  
-  # Sell command
-  sell-hand-empty: "§cYou are not holding any item!"
-  sell-usage: "§cUsage: /sell <amount/invall>"
-  sell-invalid-amount: "§cPlease enter a valid amount!"
-  sell-confirm-title: "§l§cConfirm Sale"
-  sell-confirm-content: "§eAre you sure you want to sell:\n\n§a{amount}x {item}\n\n§eFor: §a{price}"
-  sell-confirm-yes: "§l§aYes, Sell"
-  sell-confirm-no: "§l§cNo, Cancel"
-  sell-cancelled: "§cSale cancelled."
-  
-  # Admin commands
-  shop-enabled-admin: "§aShop has been enabled!"
-  shop-disabled-admin: "§cShop has been disabled!"
+# Shop Settings
+shop:
+  # Maximum items per page in GUI
+  items-per-page: 45
+  # Allow custom blocks from other plugins
+  allow-custom-blocks: true
+
+# Auction Settings
+auction:
+  # Minimum auction duration in seconds
+  min-duration: 300
+  # Maximum auction duration in seconds
+  max-duration: 86400
+  # Minimum starting bid
+  min-starting-bid: 1
+  # Auction fee percentage (0 = no fee)
+  auction-fee: 5
+  # Maximum active auctions per player
+  max-auctions-per-player: 5
+
+# Performance Settings
+performance:
+  # Enable async operations for database
+  async-database: true
+  # Cache shop data in memory
+  cache-shop-data: true
