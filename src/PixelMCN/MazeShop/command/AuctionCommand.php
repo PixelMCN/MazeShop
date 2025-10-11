@@ -1,5 +1,36 @@
 <?php
 
+# ███╗░░░███╗░█████╗░███████╗███████╗░██████╗██╗░░██╗░█████╗░██████╗░
+# ████╗░████║██╔══██╗╚════██║██╔════╝██╔════╝██║░░██║██╔══██╗██╔══██╗
+# ██╔████╔██║███████║░░███╔═╝█████╗░░╚█████╗░███████║██║░░██║██████╔╝
+# ██║╚██╔╝██║██╔══██║██╔══╝░░██╔══╝░░░╚═══██╗██╔══██║██║░░██║██╔═══╝░
+# ██║░╚═╝░██║██║░░██║███████╗███████╗██████╔╝██║░░██║╚█████╔╝██║░░░░░
+# ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░
+
+/*
+MIT License
+
+Copyright (c) 2025 Pixelis0P & MazecraftMCN Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
 declare(strict_types=1);
 
 namespace PixelMCN\MazeShop\command;
@@ -9,7 +40,6 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use PixelMCN\MazeShop\Main;
 use PixelMCN\MazeShop\gui\forms\AuctionFormGUI;
-use PixelMCN\MazeShop\gui\chest\AuctionChestGUI;
 
 class AuctionCommand extends Command {
 
@@ -33,15 +63,8 @@ class AuctionCommand extends Command {
 
         if (empty($args)) {
             // Open auction GUI
-            $guiConfig = $this->plugin->getConfig()->get("gui");
-            $guiType = is_array($guiConfig) ? ($guiConfig["auction-type"] ?? "form") : "form";
-            if ($guiType === "form") {
-                $gui = new AuctionFormGUI($this->plugin);
-                $gui->sendMainMenu($sender);
-            } else {
-                $gui = new AuctionChestGUI($this->plugin);
-                $gui->sendMainMenu($sender);
-            }
+            $gui = new AuctionFormGUI($this->plugin);
+            $gui->sendMainMenu($sender);
             return true;
         }
 
@@ -167,7 +190,7 @@ class AuctionCommand extends Command {
 
         $auction = $this->plugin->getAuctionManager()->createAuction(
             $player,
-            $heldItem->getTypeId(),
+            (string)$heldItem->getTypeId(),
             0,
             $heldItem->getName(),
             $heldItem->getCount(),

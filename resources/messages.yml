@@ -1,4 +1,13 @@
 # MazeShop Messages Configuration
+
+
+# ███╗░░░███╗░█████╗░███████╗███████╗░██████╗██╗░░██╗░█████╗░██████╗░
+# ████╗░████║██╔══██╗╚════██║██╔════╝██╔════╝██║░░██║██╔══██╗██╔══██╗
+# ██╔████╔██║███████║░░███╔═╝█████╗░░╚█████╗░███████║██║░░██║██████╔╝
+# ██║╚██╔╝██║██╔══██║██╔══╝░░██╔══╝░░░╚═══██╗██╔══██║██║░░██║██╔═══╝░
+# ██║░╚═╝░██║██║░░██║███████╗███████╗██████╔╝██║░░██║╚█████╔╝██║░░░░░
+# ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░
+
 # Developed by PixelMCN
 # Available Placeholders: {player}, {amount}, {price}, {item}, {category}, {subcategory}, {balance}, {currency}
 
@@ -122,8 +131,6 @@ help:
 
 # Images for Forms (URLs)
 images:
-  shop-icon: "textures/ui/icon_shop"
   auction-icon: "textures/ui/icon_deals"
-  category-icon: "textures/blocks/stone"
-  buy-icon: "textures/ui/icon_purchase"
-  sell-icon: "textures/ui/icon_sell"
+  buy-icon: "textures/ui/check"
+  sell-icon: "textures/ui/cancel"

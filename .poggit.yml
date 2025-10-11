@@ -6,11 +6,3 @@ branches:
 projects:
   MazeShop:
     path: ""
-    model: default
-    type: plugin
-    libs:
-      - src: muqsit/InvMenu/InvMenu
-        version: ^4.0
-        shade: syntax
-    lint:
-      phpstan: false

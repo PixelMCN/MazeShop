@@ -1,5 +1,36 @@
 <?php
 
+# ███╗░░░███╗░█████╗░███████╗███████╗░██████╗██╗░░██╗░█████╗░██████╗░
+# ████╗░████║██╔══██╗╚════██║██╔════╝██╔════╝██║░░██║██╔══██╗██╔══██╗
+# ██╔████╔██║███████║░░███╔═╝█████╗░░╚█████╗░███████║██║░░██║██████╔╝
+# ██║╚██╔╝██║██╔══██║██╔══╝░░██╔══╝░░░╚═══██╗██╔══██║██║░░██║██╔═══╝░
+# ██║░╚═╝░██║██║░░██║███████╗███████╗██████╔╝██║░░██║╚█████╔╝██║░░░░░
+# ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░
+
+/*
+MIT License
+
+Copyright (c) 2025 Pixelis0P & MazecraftMCN Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
 declare(strict_types=1);
 
 namespace PixelMCN\MazeShop\gui\forms;
@@ -154,9 +185,19 @@ class ShopFormGUI {
                 $buttons = [];
                 foreach ($this->subCategory->getItems() as $item) {
                     $currency = $this->plugin->getEconomyManager()->getCurrencySymbol();
-                    $buttons[] = [
+                    $button = [
                         "text" => $item->getName() . "\n§aBuy: " . $currency . $item->getBuyPrice()
                     ];
+                    
+                    // Add icon if item has one
+                    if ($item->getIcon() !== null && $item->getIcon() !== "") {
+                        $button["image"] = [
+                            "type" => "path",
+                            "data" => $item->getIcon()
+                        ];
+                    }
+                    
+                    $buttons[] = $button;
                 }
 
                 // Add back button
@@ -216,8 +257,7 @@ class ShopFormGUI {
 
             public function jsonSerialize(): array {
                 $currency = $this->plugin->getEconomyManager()->getCurrencySymbol();
-                $content = $this->item->getDescription() . "\n\n";
-                $content .= "§aBuy Price: §f" . $currency . $this->item->getBuyPrice() . "\n";
+                $content = "§aBuy Price: §f" . $currency . $this->item->getBuyPrice() . "\n";
                 $content .= "§cSell Price: §f" . $currency . $this->item->getSellPrice();
 
                 return [

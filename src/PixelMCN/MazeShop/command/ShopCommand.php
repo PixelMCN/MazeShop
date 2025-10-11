@@ -1,5 +1,36 @@
 <?php
 
+# ███╗░░░███╗░█████╗░███████╗███████╗░██████╗██╗░░██╗░█████╗░██████╗░
+# ████╗░████║██╔══██╗╚════██║██╔════╝██╔════╝██║░░██║██╔══██╗██╔══██╗
+# ██╔████╔██║███████║░░███╔═╝█████╗░░╚█████╗░███████║██║░░██║██████╔╝
+# ██║╚██╔╝██║██╔══██║██╔══╝░░██╔══╝░░░╚═══██╗██╔══██║██║░░██║██╔═══╝░
+# ██║░╚═╝░██║██║░░██║███████╗███████╗██████╔╝██║░░██║╚█████╔╝██║░░░░░
+# ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░
+
+/*
+MIT License
+
+Copyright (c) 2025 Pixelis0P & MazecraftMCN Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
 declare(strict_types=1);
 
 namespace PixelMCN\MazeShop\command;
@@ -9,14 +40,13 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use PixelMCN\MazeShop\Main;
 use PixelMCN\MazeShop\gui\forms\ShopFormGUI;
-use PixelMCN\MazeShop\gui\chest\ShopChestGUI;
 
 class ShopCommand extends Command {
 
     private Main $plugin;
 
     public function __construct(Main $plugin) {
-        parent::__construct("shop", "Open shop or execute shop commands", "/shop [category <name>|buy <item> <amount>|sell <item> <amount>|help]");
+        parent::__construct("shop", "Open shop or execute shop commands", "/shop [category|buy <item> <amount>|sell <item> <amount>|help]");
         $this->setPermission("mazeshop.use");
         $this->plugin = $plugin;
     }
@@ -33,29 +63,14 @@ class ShopCommand extends Command {
 
         if (empty($args)) {
             // Open main shop GUI
-            $guiConfig = $this->plugin->getConfig()->get("gui");
-            $guiType = is_array($guiConfig) ? ($guiConfig["shop-type"] ?? "form") : "form";
-            if ($guiType === "form") {
-                $gui = new ShopFormGUI($this->plugin);
-                $gui->sendMainMenu($sender);
-            } else {
-                $gui = new ShopChestGUI($this->plugin);
-                $gui->sendMainMenu($sender);
-            }
+            $gui = new ShopFormGUI($this->plugin);
+            $gui->sendMainMenu($sender);
             return true;
         }
 
         $subCommand = strtolower($args[0]);
 
         switch ($subCommand) {
-            case "category":
-                if (!isset($args[1])) {
-                    $sender->sendMessage("§cUsage: /shop category <name>");
-                    return false;
-                }
-                $this->handleCategory($sender, $args[1]);
-                break;
-
             case "buy":
                 if (!isset($args[1], $args[2])) {
                     $sender->sendMessage("§cUsage: /shop buy <item> <amount>");
@@ -77,7 +92,8 @@ class ShopCommand extends Command {
                 break;
 
             default:
-                $sender->sendMessage("§cUnknown sub-command. Use /shop help for help.");
+                // Try to open category directly with /shop <categoryname>
+                $this->handleCategory($sender, $args[0]);
                 break;
         }
 

@@ -9,7 +9,7 @@
 
 ### 🛒 Shop System
 - **Multi-level structure**: Category → Sub-category → Items
-- **Dual GUI support**: Forms GUI and beautiful Chest GUI (both built-in, no external plugins needed)
+- **Forms GUI**: Native Bedrock UI with image support
 - **Database sync**: MySQL support for cross-server shop synchronization
 - **Custom blocks**: Full support for custom blocks from other plugins
 - **Manual editing**: Edit `shop.yml` directly or use admin commands
@@ -17,7 +17,7 @@
 ### 🏆 Auction House
 - Players can create auctions with configurable duration
 - Real-time bidding system with automatic refunds
-- Separate GUI type configuration (Forms or Chest)
+- Forms GUI for easy bidding
 - Auction expiration tracking with automatic ending
 - Auction fees to prevent spam
 
@@ -31,26 +31,22 @@
 - **config.yml**: Configure database, GUI types, currency, auction settings
 - **shop.yml**: Complete shop structure with prices, descriptions, icons
 
-### ✨ Beautiful Chest GUI (Built-in)
-- **No external plugins required** - Custom inventory system built from scratch
-- **Elegant design** with decorative borders and glass panes
-- **Color-coded actions** - Green for buy, red for sell
-- **Smart navigation** - Back buttons, close buttons, pagination
-- **Quick actions** - Buy/sell x1, x16, x64 with one click
-- **Bid options** - Multiple bid increments (+$10, +$50, +$100, +$500)
-- **Real-time info** - See prices, time remaining, current bids instantly
+### ✨ Native Bedrock Forms
+- **Native UI** - Uses Bedrock's built-in form system
+- **Image support** - Custom icons for categories and items
+- **Button-based navigation** - Simple and intuitive
+- **Custom input forms** - Easy amount selection for buying/selling
+- **Quick bidding** - Simple bid input for auctions
 
 ## Installation
 
 1. Download the latest release
 2. Place `MazeShop.phar` in your `plugins` folder
-3. Install **[InvMenu](https://poggit.pmmp.io/p/InvMenu)** (REQUIRED for Chest GUI)
-4. Install either **[MazePay](https://github.com/PixelMCN/MazePay)** or **BedrockEconomy** economy plugin (REQUIRED)
-5. (Optional) Configure MySQL in `config.yml` for cross-server sync
-6. Restart your server
+3. Install either **[MazePay](https://github.com/PixelMCN/MazePay)** or **BedrockEconomy** economy plugin (REQUIRED)
+4. (Optional) Configure MySQL in `config.yml` for cross-server sync
+5. Restart your server
 
 **Required Dependencies:**
-- InvMenu (for Chest GUI functionality)
 - MazePay OR BedrockEconomy (for economy integration)
 
 **Note:** The plugin will automatically disable if no economy plugin (MazePay or BedrockEconomy) is found.
@@ -59,9 +55,7 @@
 
 ### config.yml
 ```yaml
-gui:
-  shop-type: "form"      # "form" or "chest"
-  auction-type: "form"   # "form" or "chest"
+# MazeShop uses Forms GUI for all interfaces
 
 currency:
   symbol: "$"

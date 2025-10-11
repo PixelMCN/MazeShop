@@ -1,5 +1,36 @@
 <?php
 
+# ███╗░░░███╗░█████╗░███████╗███████╗░██████╗██╗░░██╗░█████╗░██████╗░
+# ████╗░████║██╔══██╗╚════██║██╔════╝██╔════╝██║░░██║██╔══██╗██╔══██╗
+# ██╔████╔██║███████║░░███╔═╝█████╗░░╚█████╗░███████║██║░░██║██████╔╝
+# ██║╚██╔╝██║██╔══██║██╔══╝░░██╔══╝░░░╚═══██╗██╔══██║██║░░██║██╔═══╝░
+# ██║░╚═╝░██║██║░░██║███████╗███████╗██████╔╝██║░░██║╚█████╔╝██║░░░░░
+# ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░
+
+/*
+MIT License
+
+Copyright (c) 2025 Pixelis0P & MazecraftMCN Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
 declare(strict_types=1);
 
 namespace PixelMCN\MazeShop\shop;
@@ -20,11 +51,50 @@ class ShopManager {
 
     public function loadShop(): void {
         $shopFile = $this->plugin->getDataFolder() . "shop.yml";
+        
+        // Check if shop.yml exists, if not create it
+        if (!file_exists($shopFile)) {
+            $this->plugin->saveResource("shop.yml");
+        }
+        
         $this->shopConfig = new Config($shopFile, Config::YAML);
         $this->categories = [];
 
         $categoriesData = $this->shopConfig->get("categories", []);
+        
+        // If categories is not an array or is empty, try to regenerate the file
+        if (!is_array($categoriesData) || empty($categoriesData)) {
+            $this->plugin->getLogger()->warning("Invalid or empty shop.yml detected. Regenerating...");
+            
+            // Backup old file
+            if (file_exists($shopFile)) {
+                rename($shopFile, $shopFile . ".backup." . time());
+            }
+            
+            // Create new file
+            $this->plugin->saveResource("shop.yml", true);
+            $this->shopConfig = new Config($shopFile, Config::YAML);
+            $categoriesData = $this->shopConfig->get("categories", []);
+            
+            if (!is_array($categoriesData)) {
+                $this->plugin->getLogger()->error("Failed to load shop.yml even after regeneration!");
+                return;
+            }
+        }
+        
         foreach ($categoriesData as $categoryName => $categoryData) {
+            // Ensure category name is a string
+            if (!is_string($categoryName)) {
+                $this->plugin->getLogger()->warning("Invalid category name (not a string): " . var_export($categoryName, true));
+                continue;
+            }
+            
+            // Ensure category data is an array
+            if (!is_array($categoryData)) {
+                $this->plugin->getLogger()->warning("Category data for '$categoryName' is not an array");
+                continue;
+            }
+            
             $this->categories[$categoryName] = new Category(
                 $categoryName,
                 $categoryData["display-name"] ?? $categoryName,
@@ -32,6 +102,8 @@ class ShopManager {
                 $categoryData["subcategories"] ?? []
             );
         }
+        
+        $this->plugin->getLogger()->info("Loaded " . count($this->categories) . " shop categories");
     }
 
     public function reload(): void {
