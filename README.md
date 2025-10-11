@@ -1,6 +1,6 @@
 # MazeShop - Advanced Shop & Auction System
 
-**Version:** 1.0.1  
+**Version:** 1.0.0  
 **Developer:** PixelMCN  
 **PocketMine-MP:** 5.0.0+  
 **PHP:** 8.4+
