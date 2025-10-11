@@ -23,18 +23,18 @@ class DatabaseManager {
         $config = $this->plugin->getConfig();
         $dbConfig = $config->get("database");
 
-        if (!$dbConfig["enabled"]) {
+        if (!is_array($dbConfig) || !isset($dbConfig["enabled"]) || !$dbConfig["enabled"]) {
             $this->plugin->getLogger()->info("Database sync is disabled in config.");
             return;
         }
 
         try {
             $this->connection = new mysqli(
-                $dbConfig["host"],
-                $dbConfig["username"],
-                $dbConfig["password"],
-                $dbConfig["database"],
-                $dbConfig["port"]
+                $dbConfig["host"] ?? "localhost",
+                $dbConfig["username"] ?? "root",
+                $dbConfig["password"] ?? "",
+                $dbConfig["database"] ?? "mazeshop",
+                $dbConfig["port"] ?? 3306
             );
 
             if ($this->connection->connect_error) {

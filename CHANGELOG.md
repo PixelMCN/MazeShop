@@ -11,6 +11,8 @@ All notable changes to MazeShop will be documented in this file.
 - Fixed `GRAY_STAINED_GLASS_PANE` crash - replaced with compatible items (dyes and vanilla items)
 - Fixed `LIME_STAINED_GLASS_PANE` and `RED_STAINED_GLASS_PANE` compatibility issues
 - Fixed `ORANGE_STAINED_GLASS_PANE` in auction GUI
+- **Fixed DatabaseManager crash** - Added null/array checks for config.yml database section
+- Added default values for database configuration using null coalescing operator
 
 ### Changed
 - **Switched to InvMenu library for Chest GUIs** - More robust and feature-rich!
