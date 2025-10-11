@@ -7,850 +7,850 @@
 
 categories:
   Timbers:
-    display-name: §6Timbers & Wood
+    display-name: §l§6Timbers & Wood
     icon: textures/blocks/log_oak
     subcategories:
       Oak Timber:
-        display-name: §eOak Timber
+        display-name: §l§eOak Timber
         icon: textures/blocks/log_oak
         items:
         - id: minecraft:oak_log
           meta: 0
-          name: §fOak Log
+          name: §l§fOak Log
           buy-price: 25
           sell-price: 12
           amount: 1
           icon: textures/blocks/log_oak
         - id: minecraft:stripped_oak_log
           meta: 0
-          name: §fStripped Oak Log
+          name: §l§fStripped Oak Log
           buy-price: 30
           sell-price: 15
           amount: 1
           icon: textures/blocks/log_oak_top
         - id: minecraft:oak_wood
           meta: 0
-          name: §fOak Wood
+          name: §l§fOak Wood
           buy-price: 35
           sell-price: 17
           amount: 1
           icon: textures/blocks/log_oak
         - id: minecraft:stripped_oak_wood
           meta: 0
-          name: §fStripped Oak Wood
+          name: §l§fStripped Oak Wood
           buy-price: 40
           sell-price: 20
           amount: 1
           icon: textures/blocks/log_oak_top
         - id: minecraft:oak_planks
           meta: 0
-          name: §fOak Planks
+          name: §l§fOak Planks
           buy-price: 18
           sell-price: 9
           amount: 1
           icon: textures/blocks/planks_oak
         - id: minecraft:oak_slab
           meta: 0
-          name: §fOak Slab
+          name: §l§fOak Slab
           buy-price: 10
           sell-price: 5
           amount: 1
           icon: textures/blocks/planks_oak
         - id: minecraft:oak_stairs
           meta: 0
-          name: §fOak Stairs
+          name: §l§fOak Stairs
           buy-price: 22
           sell-price: 11
           amount: 1
           icon: textures/blocks/planks_oak
         - id: minecraft:oak_fence
           meta: 0
-          name: §fOak Fence
+          name: §l§fOak Fence
           buy-price: 14
           sell-price: 7
           amount: 1
           icon: textures/blocks/planks_oak
         - id: minecraft:oak_fence_gate
           meta: 0
-          name: §fOak Fence Gate
+          name: §l§fOak Fence Gate
           buy-price: 16
           sell-price: 8
           amount: 1
           icon: textures/blocks/planks_oak
         - id: minecraft:oak_door
           meta: 0
-          name: §fOak Door
+          name: §l§fOak Door
           buy-price: 20
           sell-price: 10
           amount: 1
           icon: textures/items/door_wood
         - id: minecraft:oak_trapdoor
           meta: 0
-          name: §fOak Trapdoor
+          name: §l§fOak Trapdoor
           buy-price: 18
           sell-price: 9
           amount: 1
           icon: textures/blocks/trapdoor
         - id: minecraft:oak_button
           meta: 0
-          name: §fOak Button
+          name: §l§fOak Button
           buy-price: 7
           sell-price: 3
           amount: 1
           icon: textures/blocks/planks_oak
         - id: minecraft:oak_boat
           meta: 0
-          name: §fOak Boat
+          name: §l§fOak Boat
           buy-price: 45
           sell-price: 22
           amount: 1
           icon: textures/items/boat_oak
   Ores:
-    display-name: §bOres & Minerals
+    display-name: §l§3Ores & Minerals
     icon: textures/items/diamond
     subcategories:
       Stone Ores:
-        display-name: §8Stone Ores
+        display-name: §l§6Stone Ores
         icon: textures/blocks/diamond_ore
         items:
         - id: minecraft:coal_ore
           meta: 0
-          name: §fCoal Ore
+          name: §l§fCoal Ore
           buy-price: 25
           sell-price: 12
           amount: 1
           icon: textures/blocks/coal_ore
         - id: minecraft:iron_ore
           meta: 0
-          name: §fIron Ore
+          name: §l§fIron Ore
           buy-price: 75
           sell-price: 37
           amount: 1
           icon: textures/blocks/iron_ore
         - id: minecraft:copper_ore
           meta: 0
-          name: §fCopper Ore
+          name: §l§fCopper Ore
           buy-price: 45
           sell-price: 22
           amount: 1
           icon: textures/blocks/copper_ore
         - id: minecraft:gold_ore
           meta: 0
-          name: §fGold Ore
+          name: §l§6Gold Ore
           buy-price: 150
           sell-price: 75
           amount: 1
           icon: textures/blocks/gold_ore
         - id: minecraft:redstone_ore
           meta: 0
-          name: §fRedstone Ore
+          name: §l§cRedstone Ore
           buy-price: 100
           sell-price: 50
           amount: 1
           icon: textures/blocks/redstone_ore
         - id: minecraft:lapis_ore
           meta: 0
-          name: §fLapis Lazuli Ore
+          name: §l§9Lapis Lazuli Ore
           buy-price: 120
           sell-price: 60
           amount: 1
           icon: textures/blocks/lapis_ore
         - id: minecraft:diamond_ore
           meta: 0
-          name: §bDiamond Ore
+          name: §l§3Diamond Ore
           buy-price: 750
           sell-price: 375
           amount: 1
           icon: textures/blocks/diamond_ore
         - id: minecraft:emerald_ore
           meta: 0
-          name: §aEmerald Ore
+          name: §l§aEmerald Ore
           buy-price: 1200
           sell-price: 600
           amount: 1
           icon: textures/blocks/emerald_ore
       Deepslate Ores:
-        display-name: §8Deepslate Ores
+        display-name: §l§5Deepslate Ores
         icon: textures/blocks/deepslate/deepslate_diamond_ore
         items:
         - id: minecraft:deepslate_coal_ore
           meta: 0
-          name: §fDeepslate Coal Ore
+          name: §l§fDeepslate Coal Ore
           buy-price: 30
           sell-price: 15
           amount: 1
           icon: textures/blocks/deepslate/deepslate_coal_ore
         - id: minecraft:deepslate_iron_ore
           meta: 0
-          name: §fDeepslate Iron Ore
+          name: §l§fDeepslate Iron Ore
           buy-price: 90
           sell-price: 45
           amount: 1
           icon: textures/deepslate/blocks/deepslate_iron_ore
         - id: minecraft:deepslate_copper_ore
           meta: 0
-          name: §fDeepslate Copper Ore
+          name: §l§fDeepslate Copper Ore
           buy-price: 55
           sell-price: 27
           amount: 1
           icon: textures/deepslate/blocks/deepslate_copper_ore
         - id: minecraft:deepslate_gold_ore
           meta: 0
-          name: §fDeepslate Gold Ore
+          name: §l§6Deepslate Gold Ore
           buy-price: 180
           sell-price: 90
           amount: 1
           icon: textures/blocks/deepslate/deepslate_gold_ore
         - id: minecraft:deepslate_redstone_ore
           meta: 0
-          name: §fDeepslate Redstone Ore
+          name: §l§cDeepslate Redstone Ore
           buy-price: 120
           sell-price: 60
           amount: 1
           icon: textures/blocks/deepslate/deepslate_redstone_ore
         - id: minecraft:deepslate_lapis_ore
           meta: 0
-          name: §fDeepslate Lapis Ore
+          name: §l§9Deepslate Lapis Ore
           buy-price: 145
           sell-price: 72
           amount: 1
           icon: textures/blocks/deepslate/deepslate_lapis_ore
         - id: minecraft:deepslate_diamond_ore
           meta: 0
-          name: §bDeepslate Diamond Ore
+          name: §l§3Deepslate Diamond Ore
           buy-price: 900
           sell-price: 450
           amount: 1
           icon: textures/blocks/deepslate/deepslate_diamond_ore
         - id: minecraft:deepslate_emerald_ore
           meta: 0
-          name: §aDeepslate Emerald Ore
+          name: §l§aDeepslate Emerald Ore
           buy-price: 1450
           sell-price: 725
           amount: 1
           icon: textures/blocks/deepslate/deepslate_emerald_ore
       Ingots & Resources:
-        display-name: §8Ingots & Resources
+        display-name: §l§6Ingots & Resources
         icon: textures/items/iron_ingot
         items:
         - id: minecraft:coal
           meta: 0
-          name: §fCoal
+          name: §l§fCoal
           buy-price: 15
           sell-price: 7
           amount: 1
           icon: textures/items/coal
         - id: minecraft:iron_ingot
           meta: 0
-          name: §fIron Ingot
+          name: §l§fIron Ingot
           buy-price: 65
           sell-price: 32
           amount: 1
           icon: textures/items/iron_ingot
         - id: minecraft:copper_ingot
           meta: 0
-          name: §fCopper Ingot
+          name: §l§fCopper Ingot
           buy-price: 35
           sell-price: 17
           amount: 1
           icon: textures/items/copper_ingot
         - id: minecraft:gold_ingot
           meta: 0
-          name: §6Gold Ingot
+          name: §l§6Gold Ingot
           buy-price: 125
           sell-price: 62
           amount: 1
           icon: textures/items/gold_ingot
         - id: minecraft:diamond
           meta: 0
-          name: §bDiamond
+          name: §l§3Diamond
           buy-price: 650
           sell-price: 325
           amount: 1
           icon: textures/items/diamond
         - id: minecraft:emerald
           meta: 0
-          name: §aEmerald
+          name: §l§aEmerald
           buy-price: 1000
           sell-price: 500
           amount: 1
           icon: textures/items/emerald
         - id: minecraft:redstone
           meta: 0
-          name: §cRedstone Dust
+          name: §l§cRedstone Dust
           buy-price: 20
           sell-price: 10
           amount: 1
           icon: textures/items/redstone_dust
         - id: minecraft:lapis_lazuli
           meta: 0
-          name: §9Lapis Lazuli
+          name: §l§9Lapis Lazuli
           buy-price: 25
           sell-price: 12
           amount: 1
           icon: textures/items/dye_powder_blue
         - id: minecraft:netherite_ingot
           meta: 0
-          name: §5Netherite Ingot
+          name: §l§5Netherite Ingot
           buy-price: 5000
           sell-price: 2500
           amount: 1
           icon: textures/items/netherite_ingot
         - id: minecraft:netherite_scrap
           meta: 0
-          name: §5Netherite Scrap
+          name: §l§5Netherite Scrap
           buy-price: 1200
           sell-price: 600
           amount: 1
           icon: textures/items/netherite_scrap
   Armour_Tools:
-    display-name: §4Armour & Tools
+    display-name: §l§4Armour & Tools
     icon: textures/items/diamond_sword
     subcategories:
       Iron Equipment:
-        display-name: §fIron Equipment
+        display-name: §l§fIron Equipment
         icon: textures/items/iron_sword
         items:
         - id: minecraft:iron_helmet
           meta: 0
-          name: §fIron Helmet
+          name: §l§fIron Helmet
           buy-price: 325
           sell-price: 162
           amount: 1
           icon: textures/items/iron_helmet
         - id: minecraft:iron_chestplate
           meta: 0
-          name: §fIron Chestplate
+          name: §l§fIron Chestplate
           buy-price: 520
           sell-price: 260
           amount: 1
           icon: textures/items/iron_chestplate
         - id: minecraft:iron_leggings
           meta: 0
-          name: §fIron Leggings
+          name: §l§fIron Leggings
           buy-price: 455
           sell-price: 227
           amount: 1
           icon: textures/items/iron_leggings
         - id: minecraft:iron_boots
           meta: 0
-          name: §fIron Boots
+          name: §l§fIron Boots
           buy-price: 260
           sell-price: 130
           amount: 1
           icon: textures/items/iron_boots
         - id: minecraft:iron_sword
           meta: 0
-          name: §fIron Sword
+          name: §l§fIron Sword
           buy-price: 130
           sell-price: 65
           amount: 1
           icon: textures/items/iron_sword
         - id: minecraft:iron_pickaxe
           meta: 0
-          name: §fIron Pickaxe
+          name: §l§fIron Pickaxe
           buy-price: 195
           sell-price: 97
           amount: 1
           icon: textures/items/iron_pickaxe
         - id: minecraft:iron_axe
           meta: 0
-          name: §fIron Axe
+          name: §l§fIron Axe
           buy-price: 195
           sell-price: 97
           amount: 1
           icon: textures/items/iron_axe
         - id: minecraft:iron_shovel
           meta: 0
-          name: §fIron Shovel
+          name: §l§fIron Shovel
           buy-price: 65
           sell-price: 32
           amount: 1
           icon: textures/items/iron_shovel
         - id: minecraft:iron_hoe
           meta: 0
-          name: §fIron Hoe
+          name: §l§fIron Hoe
           buy-price: 130
           sell-price: 65
           amount: 1
           icon: textures/items/iron_hoe
       Gold Equipment:
-        display-name: §6Gold Equipment
+        display-name: §l§6Gold Equipment
         icon: textures/items/gold_sword
         items:
         - id: minecraft:golden_helmet
           meta: 0
-          name: §6Golden Helmet
+          name: §l§6Golden Helmet
           buy-price: 625
           sell-price: 312
           amount: 1
           icon: textures/items/gold_helmet
         - id: minecraft:golden_chestplate
           meta: 0
-          name: §6Golden Chestplate
+          name: §l§6Golden Chestplate
           buy-price: 1000
           sell-price: 500
           amount: 1
           icon: textures/items/gold_chestplate
         - id: minecraft:golden_leggings
           meta: 0
-          name: §6Golden Leggings
+          name: §l§6Golden Leggings
           buy-price: 875
           sell-price: 437
           amount: 1
           icon: textures/items/gold_leggings
         - id: minecraft:golden_boots
           meta: 0
-          name: §6Golden Boots
+          name: §l§6Golden Boots
           buy-price: 500
           sell-price: 250
           amount: 1
           icon: textures/items/gold_boots
         - id: minecraft:golden_sword
           meta: 0
-          name: §6Golden Sword
+          name: §l§6Golden Sword
           buy-price: 250
           sell-price: 125
           amount: 1
           icon: textures/items/gold_sword
         - id: minecraft:golden_pickaxe
           meta: 0
-          name: §6Golden Pickaxe
+          name: §l§6Golden Pickaxe
           buy-price: 375
           sell-price: 187
           amount: 1
           icon: textures/items/gold_pickaxe
         - id: minecraft:golden_axe
           meta: 0
-          name: §6Golden Axe
+          name: §l§6Golden Axe
           buy-price: 375
           sell-price: 187
           amount: 1
           icon: textures/items/gold_axe
         - id: minecraft:golden_shovel
           meta: 0
-          name: §6Golden Shovel
+          name: §l§6Golden Shovel
           buy-price: 125
           sell-price: 62
           amount: 1
           icon: textures/items/gold_shovel
         - id: minecraft:golden_hoe
           meta: 0
-          name: §6Golden Hoe
+          name: §l§6Golden Hoe
           buy-price: 250
           sell-price: 125
           amount: 1
           icon: textures/items/gold_hoe
       Diamond Equipment:
-        display-name: §bDiamond Equipment
+        display-name: §l§3Diamond Equipment
         icon: textures/items/diamond_sword
         items:
         - id: minecraft:diamond_helmet
           meta: 0
-          name: §bDiamond Helmet
+          name: §l§3Diamond Helmet
           buy-price: 3250
           sell-price: 1625
           amount: 1
           icon: textures/items/diamond_helmet
         - id: minecraft:diamond_chestplate
           meta: 0
-          name: §bDiamond Chestplate
+          name: §l§3Diamond Chestplate
           buy-price: 5200
           sell-price: 2600
           amount: 1
           icon: textures/items/diamond_chestplate
         - id: minecraft:diamond_leggings
           meta: 0
-          name: §bDiamond Leggings
+          name: §l§3Diamond Leggings
           buy-price: 4550
           sell-price: 2275
           amount: 1
           icon: textures/items/diamond_leggings
         - id: minecraft:diamond_boots
           meta: 0
-          name: §bDiamond Boots
+          name: §l§3Diamond Boots
           buy-price: 2600
           sell-price: 1300
           amount: 1
           icon: textures/items/diamond_boots
         - id: minecraft:diamond_sword
           meta: 0
-          name: §bDiamond Sword
+          name: §l§3Diamond Sword
           buy-price: 1300
           sell-price: 650
           amount: 1
           icon: textures/items/diamond_sword
         - id: minecraft:diamond_pickaxe
           meta: 0
-          name: §bDiamond Pickaxe
+          name: §l§3Diamond Pickaxe
           buy-price: 1950
           sell-price: 975
           amount: 1
           icon: textures/items/diamond_pickaxe
         - id: minecraft:diamond_axe
           meta: 0
-          name: §bDiamond Axe
+          name: §l§3Diamond Axe
           buy-price: 1950
           sell-price: 975
           amount: 1
           icon: textures/items/diamond_axe
         - id: minecraft:diamond_shovel
           meta: 0
-          name: §bDiamond Shovel
+          name: §l§3Diamond Shovel
           buy-price: 650
           sell-price: 325
           amount: 1
           icon: textures/items/diamond_shovel
         - id: minecraft:diamond_hoe
           meta: 0
-          name: §bDiamond Hoe
+          name: §l§3Diamond Hoe
           buy-price: 1300
           sell-price: 650
           amount: 1
           icon: textures/items/diamond_hoe
       Netherite Equipment:
-        display-name: §5Netherite Equipment
+        display-name: §l§5Netherite Equipment
         icon: textures/items/netherite_sword
         items:
         - id: minecraft:netherite_helmet
           meta: 0
-          name: §5Netherite Helmet
+          name: §l§5Netherite Helmet
           buy-price: 8250
           sell-price: 4125
           amount: 1
           icon: textures/items/netherite_helmet
         - id: minecraft:netherite_chestplate
           meta: 0
-          name: §5Netherite Chestplate
+          name: §l§5Netherite Chestplate
           buy-price: 13200
           sell-price: 6600
           amount: 1
           icon: textures/items/netherite_chestplate
         - id: minecraft:netherite_leggings
           meta: 0
-          name: §5Netherite Leggings
+          name: §l§5Netherite Leggings
           buy-price: 11550
           sell-price: 5775
           amount: 1
           icon: textures/items/netherite_leggings
         - id: minecraft:netherite_boots
           meta: 0
-          name: §5Netherite Boots
+          name: §l§5Netherite Boots
           buy-price: 6600
           sell-price: 3300
           amount: 1
           icon: textures/items/netherite_boots
         - id: minecraft:netherite_sword
           meta: 0
-          name: §5Netherite Sword
+          name: §l§5Netherite Sword
           buy-price: 6300
           sell-price: 3150
           amount: 1
           icon: textures/items/netherite_sword
         - id: minecraft:netherite_pickaxe
           meta: 0
-          name: §5Netherite Pickaxe
+          name: §l§5Netherite Pickaxe
           buy-price: 6950
           sell-price: 3475
           amount: 1
           icon: textures/items/netherite_pickaxe
         - id: minecraft:netherite_axe
           meta: 0
-          name: §5Netherite Axe
+          name: §l§5Netherite Axe
           buy-price: 6950
           sell-price: 3475
           amount: 1
           icon: textures/items/netherite_axe
         - id: minecraft:netherite_shovel
           meta: 0
-          name: §5Netherite Shovel
+          name: §l§5Netherite Shovel
           buy-price: 5650
           sell-price: 2825
           amount: 1
           icon: textures/items/netherite_shovel
         - id: minecraft:netherite_hoe
           meta: 0
-          name: §5Netherite Hoe
+          name: §l§5Netherite Hoe
           buy-price: 6300
           sell-price: 3150
           amount: 1
           icon: textures/items/netherite_hoe
   Food:
-    display-name: §cFood & Farming
+    display-name: §l§cFood & Farming
     icon: textures/items/apple
     subcategories:
       Basic Food:
-        display-name: §eBasic Food
+        display-name: §l§eBasic Food
         icon: textures/items/bread
         items:
         - id: minecraft:bread
           meta: 0
-          name: §fBread
+          name: §l§fBread
           buy-price: 25
           sell-price: 12
           amount: 1
           icon: textures/items/bread
         - id: minecraft:baked_potato
           meta: 0
-          name: §fBaked Potato
+          name: §l§fBaked Potato
           buy-price: 20
           sell-price: 10
           amount: 1
           icon: textures/items/potato_baked
         - id: minecraft:cooked_beef
           meta: 0
-          name: §fCooked Beef
+          name: §l§fCooked Beef
           buy-price: 40
           sell-price: 20
           amount: 1
           icon: textures/items/beef_cooked
         - id: minecraft:cooked_mutton
           meta: 0
-          name: §fCooked Mutton
+          name: §l§fCooked Mutton
           buy-price: 35
           sell-price: 17
           amount: 1
           icon: textures/items/mutton_cooked
         - id: minecraft:cooked_chicken
           meta: 0
-          name: §fCooked Chicken
+          name: §l§fCooked Chicken
           buy-price: 30
           sell-price: 15
           amount: 1
           icon: textures/items/chicken_cooked
         - id: minecraft:cooked_porkchop
           meta: 0
-          name: §fCooked Porkchop
+          name: §l§fCooked Porkchop
           buy-price: 35
           sell-price: 17
           amount: 1
           icon: textures/items/porkchop_cooked
         - id: minecraft:cooked_salmon
           meta: 0
-          name: §fCooked Salmon
+          name: §l§fCooked Salmon
           buy-price: 45
           sell-price: 22
           amount: 1
           icon: textures/items/fish_salmon_cooked
         - id: minecraft:cooked_cod
           meta: 0
-          name: §fCooked Cod
+          name: §l§fCooked Cod
           buy-price: 30
           sell-price: 15
           amount: 1
           icon: textures/items/fish_cooked
       Premium Food:
-        display-name: §6Premium Food
+        display-name: §l§6Premium Food
         icon: textures/items/apple_golden
         items:
         - id: minecraft:golden_apple
           meta: 0
-          name: §6Golden Apple
+          name: §l§6Golden Apple
           buy-price: 750
           sell-price: 375
           amount: 1
           icon: textures/items/apple_golden
         - id: minecraft:golden_carrot
           meta: 0
-          name: §6Golden Carrot
+          name: §l§6Golden Carrot
           buy-price: 650
           sell-price: 325
           amount: 1
           icon: textures/items/carrot_golden
         - id: minecraft:enchanted_golden_apple
           meta: 0
-          name: §dEnchanted Golden Apple
+          name: §l§dEnchanted Golden Apple
           buy-price: 5000
           sell-price: 2500
           amount: 1
           icon: textures/items/apple_golden
   Potions_Brewery:
-    display-name: §dPotions & Brewery
+    display-name: §l§dPotions & Brewery
     icon: textures/items/potion_bottle_splash_heal
     subcategories:
       Potions:
-        display-name: §5Potions
+        display-name: §l§5Potions
         icon: textures/items/potion_bottle_heal
         items:
         - id: minecraft:potion
           meta: 5
-          name: §fPotion of Healing
+          name: §l§dPotion of Healing
           buy-price: 200
           sell-price: 100
           amount: 1
           icon: textures/items/potion_bottle_heal
         - id: minecraft:potion{Potion:healing}
           meta: 9
-          name: §fPotion of Regeneration
+          name: §l§dPotion of Regeneration
           buy-price: 250
           sell-price: 125
           amount: 1
           icon: textures/items/potion_bottle_regeneration
         - id: minecraft:potion{Potion:long_regeneration}
           meta: 15
-          name: §fPotion of Swiftness
+          name: §l§dPotion of Swiftness
           buy-price: 180
           sell-price: 90
           amount: 1
           icon: textures/items/potion_bottle_moveSpeed
         - id: minecraft:potion{Potion:long_swiftness}
           meta: 12
-          name: §fPotion of Fire Resistance
+          name: §l§dPotion of Fire Resistance
           buy-price: 220
           sell-price: 110
           amount: 1
           icon: textures/items/potion_bottle_fireResistance
         - id: minecraft:potion
           meta: 3
-          name: §fPotion of Strength
+          name: §l§dPotion of Strength
           buy-price: 240
           sell-price: 120
           amount: 1
           icon: textures/items/potion_bottle_damageBoost
         - id: minecraft:potion
           meta: 14
-          name: §fPotion of Invisibility
+          name: §l§dPotion of Invisibility
           buy-price: 300
           sell-price: 150
           amount: 1
           icon: textures/items/potion_bottle_invisibility
       Splash Potions:
-        display-name: §cSplash Potions
+        display-name: §l§cSplash Potions
         icon: textures/items/potion_bottle_splash_heal
         items:
         - id: minecraft:splash_potion
           meta: 5
-          name: §fSplash Potion of Healing
+          name: §l§cSplash Potion of Healing
           buy-price: 280
           sell-price: 140
           amount: 1
           icon: textures/items/potion_bottle_splash_heal
         - id: minecraft:splash_potion
           meta: 9
-          name: §fSplash Potion of Regeneration
+          name: §l§cSplash Potion of Regeneration
           buy-price: 330
           sell-price: 165
           amount: 1
           icon: textures/items/potion_bottle_splash_regeneration
         - id: minecraft:splash_potion
           meta: 15
-          name: §fSplash Potion of Swiftness
+          name: §l§cSplash Potion of Swiftness
           buy-price: 260
           sell-price: 130
           amount: 1
           icon: textures/items/potion_bottle_splash_moveSpeed
         - id: minecraft:splash_potion
           meta: 23
-          name: §fSplash Potion of Harming
+          name: §l§cSplash Potion of Harming
           buy-price: 350
           sell-price: 175
           amount: 1
           icon: textures/items/potion_bottle_splash_harm
         - id: minecraft:splash_potion
           meta: 19
-          name: §fSplash Potion of Poison
+          name: §l§cSplash Potion of Poison
           buy-price: 320
           sell-price: 160
           amount: 1
           icon: textures/items/potion_bottle_splash_poison
       Brewing Materials:
-        display-name: §6Brewing Materials
+        display-name: §l§6Brewing Materials
         icon: textures/items/glowstone_dust
         items:
         - id: minecraft:glass_bottle
           meta: 0
-          name: §fGlass Bottle
+          name: §l§fGlass Bottle
           buy-price: 15
           sell-price: 7
           amount: 1
           icon: textures/items/potion_bottle_empty
         - id: minecraft:potion
           meta: 0
-          name: §fWater Bottle
+          name: §l§fWater Bottle
           buy-price: 20
           sell-price: 10
           amount: 1
           icon: textures/items/potion_bottle_drinkable
         - id: minecraft:nether_wart
           meta: 0
-          name: §fNether Wart
+          name: §l§fNether Wart
           buy-price: 50
           sell-price: 25
           amount: 1
           icon: textures/items/nether_wart
         - id: minecraft:blaze_powder
           meta: 0
-          name: §fBlaze Powder
+          name: §l§6Blaze Powder
           buy-price: 80
           sell-price: 40
           amount: 1
           icon: textures/items/blaze_powder
         - id: minecraft:fermented_spider_eye
           meta: 0
-          name: §fFermented Spider Eye
+          name: §l§fFermented Spider Eye
           buy-price: 60
           sell-price: 30
           amount: 1
           icon: textures/items/spider_eye_fermented
         - id: minecraft:sugar
           meta: 0
-          name: §fSugar
+          name: §l§fSugar
           buy-price: 10
           sell-price: 5
           amount: 1
           icon: textures/items/sugar
         - id: minecraft:glowstone_dust
           meta: 0
-          name: §fGlowstone Dust
+          name: §l§eGlowstone Dust
           buy-price: 45
           sell-price: 22
           amount: 1
           icon: textures/items/glowstone_dust
         - id: minecraft:redstone
           meta: 0
-          name: §cRedstone Dust
+          name: §l§cRedstone Dust
           buy-price: 20
           sell-price: 10
           amount: 1
           icon: textures/items/redstone_dust
         - id: minecraft:gunpowder
           meta: 0
-          name: §fGunpowder
+          name: §l§fGunpowder
           buy-price: 35
           sell-price: 17
           amount: 1
           icon: textures/items/gunpowder
         - id: minecraft:magma_cream
           meta: 0
-          name: §fMagma Cream
+          name: §l§6Magma Cream
           buy-price: 70
           sell-price: 35
           amount: 1
           icon: textures/items/magma_cream
         - id: minecraft:ghast_tear
           meta: 0
-          name: §fGhast Tear
+          name: §l§fGhast Tear
           buy-price: 150
           sell-price: 75
           amount: 1
           icon: textures/items/ghast_tear
         - id: minecraft:spider_eye
           meta: 0
-          name: §fSpider Eye
+          name: §l§fSpider Eye
           buy-price: 25
           sell-price: 12
           amount: 1
           icon: textures/items/spider_eye
         - id: minecraft:rabbit_foot
           meta: 0
-          name: §fRabbit's Foot
+          name: §l§fRabbit's Foot
           buy-price: 90
           sell-price: 45
           amount: 1
           icon: textures/items/rabbit_foot
         - id: minecraft:dragon_breath
           meta: 0
-          name: §dDragon's Breath
+          name: §l§dDragon's Breath
           buy-price: 500
           sell-price: 250
           amount: 1

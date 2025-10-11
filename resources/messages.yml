@@ -22,12 +22,12 @@ general:
 
 # Shop Messages
 shop:
-  title: "§l§bMazeShop"
-  description: "§7Welcome to MazeShop! Browse our categories."
-  category-button: "§a{category}"
-  category-description: "§7Click to browse {category}"
-  back-button: "§cBack"
-  back-description: "§7Return to previous menu"
+  title: "§l§3MazeShop"
+  description: "§0Browse our categories and find what you need"
+  category-button: "§6{category}"
+  category-description: "§0Click to browse {category}"
+  back-button: "§4Back"
+  back-description: "§0Return to previous menu"
   purchase-success: "§aSuccessfully purchased {amount}x {item} for {price}{currency}!"
   purchase-failed: "§cFailed to purchase {item}. Please try again."
   sell-success: "§aSuccessfully sold {amount}x {item} for {price}{currency}!"
@@ -41,23 +41,23 @@ shop:
 
 # Shop Forms
 shop-form:
-  title: "§l§bMazeShop"
-  content: "§7Select a category to browse:"
-  category-title: "§l§a{category}"
-  category-content: "§7Select a sub-category or item:"
-  item-title: "§l§e{item}"
-  item-content: "§7{description}\n\n§aBuy Price: §f{buy-price}{currency}\n§cSell Price: §f{sell-price}{currency}\n\n§7Enter amount:"
-  buy-button: "§aBuy"
-  sell-button: "§cSell"
+  title: "§l§3MazeShop"
+  content: "§fSelect a category to browse:"
+  category-title: "§l§6{category}"
+  category-content: "§0Select a sub-category or item:"
+  item-title: "§l§6{item}"
+  item-content: "§0{description}\n\n§2Buy Price: §f{buy-price}{currency}\n§4Sell Price: §f{sell-price}{currency}\n\n§0Enter amount:"
+  buy-button: "§2Buy"
+  sell-button: "§4Sell"
   amount-input: "Amount"
 
 # Auction Messages
 auction:
   title: "§l§6Auction House"
-  description: "§7Browse active auctions or create your own!"
-  list-button: "§aView Auctions"
-  create-button: "§eCreate Auction"
-  my-auctions-button: "§bMy Auctions"
+  description: "§0Browse active auctions or create your own"
+  list-button: "§2View Auctions"
+  create-button: "§6Create Auction"
+  my-auctions-button: "§3My Auctions"
   create-success: "§aAuction created successfully! ID: {auction-id}"
   create-failed: "§cFailed to create auction. Please try again."
   bid-success: "§aYou placed a bid of {amount}{currency} on auction #{auction-id}!"
@@ -75,16 +75,16 @@ auction:
 # Auction Forms
 auction-form:
   list-title: "§l§6Active Auctions"
-  list-content: "§7Click on an auction to view details:"
-  auction-button: "§e{item} §7- §a{current-bid}{currency}"
-  auction-description: "§7Seller: {seller}\n§7Time Left: {time-left}"
-  view-title: "§l§eAuction #{auction-id}"
-  view-content: "§7Item: §f{item}\n§7Amount: §f{amount}\n§7Seller: §f{seller}\n§7Current Bid: §a{current-bid}{currency}\n§7Time Left: §e{time-left}\n\n§7Enter your bid amount:"
-  bid-button: "§aPlace Bid"
-  create-title: "§l§eCreate Auction"
-  create-content: "§7Hold the item you want to auction in your hand.\n\n§7Starting Bid:"
+  list-content: "§0Click on an auction to view details:"
+  auction-button: "§6{item} §0- §2{current-bid}{currency}"
+  auction-description: "§0Seller: {seller}\n§0Time Left: {time-left}"
+  view-title: "§l§6Auction #{auction-id}"
+  view-content: "§0Item: §f{item}\n§0Amount: §f{amount}\n§0Seller: §f{seller}\n§0Current Bid: §2{current-bid}{currency}\n§0Time Left: §6{time-left}\n\n§0Enter your bid amount:"
+  bid-button: "§2Place Bid"
+  create-title: "§l§6Create Auction"
+  create-content: "§0Hold the item you want to auction in your hand.\n\n§0Starting Bid:"
   duration-label: "Duration (seconds):"
-  create-confirm-button: "§aCreate Auction"
+  create-confirm-button: "§2Create Auction"
 
 # Admin Messages
 admin:
@@ -103,31 +103,31 @@ admin:
 
 # Help Messages
 help:
-  shop-title: "§l§bShop Commands"
+  shop-title: "§l§3Shop Commands"
   shop-commands:
-    - "§a/shop §7- Open main shop"
-    - "§a/shop category <name> §7- Open specific category"
-    - "§a/shop buy <item> <amount> §7- Quick buy item"
-    - "§a/shop sell <item> <amount> §7- Quick sell item"
-    - "§a/shop help §7- Show this help"
+    - "§2/shop §0- Open main shop"
+    - "§2/shop category <name> §0- Open specific category"
+    - "§2/shop buy <item> <amount> §0- Quick buy item"
+    - "§2/shop sell <item> <amount> §0- Quick sell item"
+    - "§2/shop help §0- Show this help"
   auction-title: "§l§6Auction Commands"
   auction-commands:
-    - "§a/auction list §7- List active auctions"
-    - "§a/auction bid <id> <amount> §7- Place a bid"
-    - "§a/auction create <startingBid> <duration> §7- Create auction"
-    - "§a/auction view <id> §7- View auction details"
-  admin-title: "§l§cAdmin Commands"
+    - "§2/auction list §0- List active auctions"
+    - "§2/auction bid <id> <amount> §0- Place a bid"
+    - "§2/auction create <startingBid> <duration> §0- Create auction"
+    - "§2/auction view <id> §0- View auction details"
+  admin-title: "§l§4Admin Commands"
   admin-commands:
-    - "§c/shopadmin addcategory <name> §7- Add category"
-    - "§c/shopadmin removecategory <name> §7- Remove category"
-    - "§c/shopadmin addsubcategory <cat> <name> §7- Add sub-category"
-    - "§c/shopadmin removesubcategory <cat> <name> §7- Remove sub-category"
-    - "§c/shopadmin additem <cat> <sub> <price> §7- Add item (hold in hand)"
-    - "§c/shopadmin removeitem <cat> <sub> <item> §7- Remove item"
-    - "§c/shopadmin edititem <cat> <sub> <item> §7- Edit item"
-    - "§c/shopadmin reload §7- Reload configs"
-    - "§c/auctionadmin remove <id> §7- Cancel auction"
-    - "§c/auctionadmin end <id> §7- Force end auction"
+    - "§4/shopadmin addcategory <name> §0- Add category"
+    - "§4/shopadmin removecategory <name> §0- Remove category"
+    - "§4/shopadmin addsubcategory <cat> <name> §0- Add sub-category"
+    - "§4/shopadmin removesubcategory <cat> <name> §0- Remove sub-category"
+    - "§4/shopadmin additem <cat> <sub> <price> §0- Add item (hold in hand)"
+    - "§4/shopadmin removeitem <cat> <sub> <item> §0- Remove item"
+    - "§4/shopadmin edititem <cat> <sub> <item> §0- Edit item"
+    - "§4/shopadmin reload §0- Reload configs"
+    - "§4/auctionadmin remove <id> §0- Cancel auction"
+    - "§4/auctionadmin end <id> §0- Force end auction"
 
 # Images for Forms (URLs)
 images:

@@ -1,59 +1,104 @@
-# MazeShop - Advanced Shop & Auction System
+<div align="center">
 
-**Version:** 1.0.0  
-**Developer:** PixelMCN  
-**PocketMine-MP:** 5.0.0+  
-**PHP:** 8.4+
+# 🛒 MazeShop
 
-## Features
+### Advanced Shop & Auction System for PocketMine-MP
 
-### 🛒 Shop System
-- **Multi-level structure**: Category → Sub-category → Items
-- **Forms GUI**: Native Bedrock UI with image support
-- **Database sync**: MySQL support for cross-server shop synchronization
-- **Custom blocks**: Full support for custom blocks from other plugins
-- **Manual editing**: Edit `shop.yml` directly or use admin commands
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/PixelMCN/MazeShop/releases)
+[![PocketMine-MP](https://img.shields.io/badge/PocketMine--MP-5.0.0+-orange.svg)](https://github.com/pmmp/PocketMine-MP)
+[![PHP](https://img.shields.io/badge/PHP-8.4+-purple.svg)](https://www.php.net/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/PixelMCN/MazeShop/total.svg)](https://github.com/PixelMCN/MazeShop/releases)
+[![Stars](https://img.shields.io/github/stars/PixelMCN/MazeShop.svg)](https://github.com/PixelMCN/MazeShop/stargazers)
 
-### 🏆 Auction House
-- Players can create auctions with configurable duration
-- Real-time bidding system with automatic refunds
-- Forms GUI for easy bidding
-- Auction expiration tracking with automatic ending
-- Auction fees to prevent spam
+**Developed by PixelMCN** | [Discord](https://discord.gg/pixelmcn) | [Issues](https://github.com/PixelMCN/MazeShop/issues)
 
-### 💰 Economy Integration
-- **Auto-detection**: Automatically detects MazePay or BedrockEconomy
-- **No balance storage**: All transactions handled by economy plugins
-- **Configurable currency**: Customize currency symbol and name
+---
 
-### 🎨 Highly Customizable
-- **messages.yml**: Fully customizable messages, placeholders, form text, and GUI images
-- **config.yml**: Configure database, GUI types, currency, auction settings
-- **shop.yml**: Complete shop structure with prices, descriptions, icons
+</div>
 
-### ✨ Native Bedrock Forms
-- **Native UI** - Uses Bedrock's built-in form system
-- **Image support** - Custom icons for categories and items
-- **Button-based navigation** - Simple and intuitive
-- **Custom input forms** - Easy amount selection for buying/selling
-- **Quick bidding** - Simple bid input for auctions
+## ✨ Features
 
-## Installation
+<details open>
+<summary><b>🛒 Shop System</b></summary>
+<br>
+- ✅ **Multi-level structure** - Category → Sub-category → Items
+- ✅ **Forms GUI** - Native Bedrock UI with image support
+- ✅ **Database sync** - MySQL support for cross-server synchronization
+- ✅ **Custom blocks** - Full support for custom blocks from other plugins
+- ✅ **Manual editing** - Edit `shop.yml` directly or use admin commands
+- ✅ **Direct access** - Use `/shop <category>` for instant navigation
 
-1. Download the latest release
-2. Place `MazeShop.phar` in your `plugins` folder
-3. Install either **[MazePay](https://github.com/PixelMCN/MazePay)** or **BedrockEconomy** economy plugin (REQUIRED)
-4. (Optional) Configure MySQL in `config.yml` for cross-server sync
-5. Restart your server
+</details>
 
-**Required Dependencies:**
-- MazePay OR BedrockEconomy (for economy integration)
+<details open>
+<summary><b>🏆 Auction House</b></summary>
+<br>
+- ✅ **Player auctions** - Configurable duration and starting bids
+- ✅ **Real-time bidding** - Automatic refund system
+- ✅ **Forms GUI** - Easy-to-use bidding interface
+- ✅ **Expiration tracking** - Automatic auction ending
+- ✅ **Anti-spam** - Configurable auction fees
 
-**Note:** The plugin will automatically disable if no economy plugin (MazePay or BedrockEconomy) is found.
+</details>
 
-## Configuration
+<details open>
+<summary><b>💰 Economy Integration</b></summary>
+<br>
+- ✅ **Auto-detection** - Supports MazePay or BedrockEconomy
+- ✅ **No balance storage** - All transactions handled by economy plugins
+- ✅ **Configurable currency** - Customize symbol and name
 
-### config.yml
+</details>
+
+<details open>
+<summary><b>🎨 Highly Customizable</b></summary>
+<br>
+- ✅ **messages.yml** - Custom messages, placeholders, and colors
+- ✅ **config.yml** - Database, currency, auction settings
+- ✅ **shop.yml** - Complete shop structure with 188+ items
+
+</details>
+
+<details open>
+<summary><b>📱 Native Bedrock Forms</b></summary>
+<br>
+- ✅ **Native UI** - Bedrock's built-in form system
+- ✅ **Image support** - Custom texture icons
+- ✅ **Button-based** - Simple and intuitive navigation
+- ✅ **Custom input** - Easy amount selection
+- ✅ **Quick bidding** - Simple bid input
+
+</details>
+
+---
+
+## 📦 Installation
+
+```bash
+# 1. Download latest release
+wget https://github.com/PixelMCN/MazeShop/releases/latest/download/MazeShop.phar
+
+# 2. Place in plugins folder
+mv MazeShop.phar /path/to/server/plugins/
+
+# 3. Install economy plugin (REQUIRED)
+# - MazePay: https://github.com/PixelMCN/MazePay
+# - BedrockEconomy: https://github.com/cooldogedev/BedrockEconomy
+
+# 4. Restart server
+restart
+```
+
+> **⚠️ Important:** MazeShop requires either **MazePay** or **BedrockEconomy** to function. The plugin will automatically disable if no economy plugin is detected.
+
+---
+
+## ⚙️ Configuration
+
+<details>
+<summary><b>config.yml</b> (Click to expand)</summary>
+
 ```yaml
 # MazeShop uses Forms GUI for all interfaces
 
@@ -78,7 +123,11 @@ auction:
   max-auctions-per-player: 5
 ```
 
-### shop.yml
+</details>
+
+<details>
+<summary><b>shop.yml</b> (Click to expand)</summary>
+
 ```yaml
 categories:
   Stone:
@@ -98,9 +147,16 @@ categories:
             amount: 1
 ```
 
-## Commands
+</details>
 
-### Player Commands
+---
+
+## 📜 Commands
+
+<div align="center">
+
+### 👤 Player Commands
+
 | Command | Description | Permission |
 |---------|-------------|------------|
 | `/shop` | Open main shop | `mazeshop.use` |
@@ -113,8 +169,10 @@ categories:
 | `/auction bid <id> <amount>` | Place a bid | `mazeshop.auction.use` |
 | `/auction create <startingBid> <duration>` | Create auction | `mazeshop.auction.use` |
 | `/auction view <id>` | View auction details | `mazeshop.auction.use` |
+| `/sell <amount\|all>` | Quick sell items | `mazeshop.use` |
 
-### Admin Commands
+### 🛠️ Admin Commands
+
 | Command | Description | Permission |
 |---------|-------------|------------|
 | `/shopadmin addcategory <name>` | Add category | `mazeshop.admin` |
@@ -127,21 +185,27 @@ categories:
 | `/auctionadmin remove <id>` | Cancel auction | `mazeshop.auction.admin` |
 | `/auctionadmin end <id>` | Force end auction | `mazeshop.auction.admin` |
 
-## Permissions
+</div>
 
-```yaml
-mazeshop.use: true                    # Use shop commands
-mazeshop.admin: op                    # Admin commands
-mazeshop.auction.use: true            # Use auction system
-mazeshop.auction.admin: op            # Auction admin commands
-mazeshop.category.edit: op            # Edit categories
-```
+---
 
-## API & Events
+## 🔐 Permissions
 
-MazeShop provides a comprehensive API for developers:
+| Permission | Default | Description |
+|------------|---------|-------------|
+| `mazeshop.use` | `true` | Use shop commands |
+| `mazeshop.admin` | `op` | Admin commands |
+| `mazeshop.auction.use` | `true` | Use auction system |
+| `mazeshop.auction.admin` | `op` | Auction admin commands |
+| `mazeshop.category.edit` | `op` | Edit categories |
 
-### Events
+---
+
+## 🔌 API & Events
+
+<details>
+<summary><b>Available Events</b> (Click to expand)</summary>
+
 ```php
 use PixelMCN\MazeShop\event\ItemPurchaseEvent;
 use PixelMCN\MazeShop\event\ItemSellEvent;
@@ -161,7 +225,11 @@ public function onPurchase(ItemPurchaseEvent $event): void {
 }
 ```
 
-### API Usage
+</details>
+
+<details>
+<summary><b>API Usage</b> (Click to expand)</summary>
+
 ```php
 use PixelMCN\MazeShop\Main;
 
@@ -185,9 +253,16 @@ $auctions = $auctionManager->getAllAuctions();
 $playerAuctions = $auctionManager->getPlayerAuctions("PlayerName");
 ```
 
-## Database Structure
+</details>
 
-If MySQL sync is enabled, MazeShop creates three tables:
+---
+
+## 🗄️ Database Structure
+
+<details>
+<summary><b>MySQL Tables</b> (Click to expand)</summary>
+
+If MySQL sync is enabled, MazeShop creates these tables:
 
 ### mazeshop_categories
 - `id` - Auto-increment primary key
@@ -217,22 +292,23 @@ If MySQL sync is enabled, MazeShop creates three tables:
 - `amount` - Item stack amount
 - `created_at` / `updated_at` - Timestamps
 
-## Support
-
-- **Issues**: [GitHub Issues](https://github.com/PixelMCN/MazeShop/issues)
-- **Discord**: [PixelMCN Discord](https://discord.gg/pixelmcn)
-
-## Credits
-
-**Developed by PixelMCN**
-
-## License
-
-See [LICENSE](LICENSE) file for details.
+</details>
 
 ---
 
-### Quick Start Example
+## 💬 Support & Links
+
+<div align="center">
+
+[![GitHub Issues](https://img.shields.io/badge/Issues-GitHub-red.svg?logo=github)](https://github.com/PixelMCN/MazeShop/issues)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289DA.svg?logo=discord)](https://discord.gg/pixelmcn)
+[![Documentation](https://img.shields.io/badge/Docs-Wiki-blue.svg?logo=gitbook)](https://github.com/PixelMCN/MazeShop/wiki)
+
+</div>
+
+---
+
+## 🚀 Quick Start
 
 1. Start server with MazeShop installed
 2. Player types `/shop` to open shop GUI
@@ -241,7 +317,7 @@ See [LICENSE](LICENSE) file for details.
 5. Hold item and type `/auction create 100 3600` to create 1-hour auction
 6. Other players can bid using `/auction bid <id> <amount>`
 
-### Admin Quick Start
+### 🛠️ Admin Quick Start
 
 ```bash
 # Add a new category
@@ -257,7 +333,9 @@ See [LICENSE](LICENSE) file for details.
 /shopadmin reload
 ```
 
-## Troubleshooting
+---
+
+## ❓ Troubleshooting
 
 **Shop not opening?**
 - Ensure economy plugin (MazePay or BedrockEconomy) is installed
@@ -278,7 +356,9 @@ See [LICENSE](LICENSE) file for details.
 - The plugin requires one of these economy plugins to function
 - Check server logs for economy plugin errors
 
-## Performance
+---
+
+## ⚡ Performance
 
 MazeShop is optimized for:
 - ✅ Multiple servers with database sync
@@ -289,4 +369,35 @@ MazeShop is optimized for:
 
 ---
 
+<div align="center">
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=PixelMCN/MazeShop&type=Date)](https://star-history.com/#PixelMCN/MazeShop&Date)
+
+---
+
+### 📝 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+### 👨‍💻 Credits
+
+**Developed with ❤️ by PixelMCN**
+
+[![GitHub](https://img.shields.io/badge/GitHub-PixelMCN-181717.svg?logo=github)](https://github.com/PixelMCN)
+[![Website](https://img.shields.io/badge/Website-pixelmcn.com-00ADD8.svg?logo=google-chrome)](https://pixelmcn.com)
+
+---
+
 **Thank you for using MazeShop!** 🎉
+
+If you find this plugin useful, please consider:
+- ⭐ **Starring** this repository
+- 🐛 **Reporting** bugs and issues
+- 💡 **Suggesting** new features
+- 📢 **Sharing** with others
+
+</div>

@@ -64,16 +64,16 @@ class ShopAdminFormGUI {
             public function jsonSerialize(): array {
                 return [
                     "type" => "form",
-                    "title" => "§l§cShop Admin",
-                    "content" => "§7Manage shop categories, subcategories, and items:",
+                    "title" => "§l§4Shop Admin",
+                    "content" => "§0Manage shop categories, subcategories, and items:",
                     "buttons" => [
-                        ["text" => "§aAdd Category"],
-                        ["text" => "§eEdit Category"],
-                        ["text" => "§cRemove Category"],
-                        ["text" => "§bAdd Item"],
-                        ["text" => "§6Edit Item"],
-                        ["text" => "§4Remove Item"],
-                        ["text" => "§dReload Shop"],
+                        ["text" => "§2Add Category\n§0Create a new shop category"],
+                        ["text" => "§6Edit Category\n§0Modify existing category"],
+                        ["text" => "§4Remove Category\n§0Delete a category"],
+                        ["text" => "§3Add Item\n§0Add item to shop"],
+                        ["text" => "§6Edit Item\n§0Modify item properties"],
+                        ["text" => "§4Remove Item\n§0Delete an item"],
+                        ["text" => "§5Reload Shop\n§0Refresh shop data"],
                     ]
                 ];
             }
@@ -119,7 +119,7 @@ class ShopAdminFormGUI {
             public function jsonSerialize(): array {
                 return [
                     "type" => "custom_form",
-                    "title" => "§aAdd Category",
+                    "title" => "§2Add Category",
                     "content" => [
                         [
                             "type" => "input",
@@ -202,14 +202,14 @@ class ShopAdminFormGUI {
             public function jsonSerialize(): array {
                 $buttons = [];
                 foreach ($this->categories as $category) {
-                    $buttons[] = ["text" => $category->getDisplayName()];
+                    $buttons[] = ["text" => "§6" . $category->getDisplayName() . "\n§0Click to edit"];
                 }
-                $buttons[] = ["text" => "§cBack"];
+                $buttons[] = ["text" => "§4Back\n§0Return to menu"];
 
                 return [
                     "type" => "form",
-                    "title" => "§eEdit Category",
-                    "content" => "§7Select a category to edit:",
+                    "title" => "§6Edit Category",
+                    "content" => "§0Select a category to edit:",
                     "buttons" => $buttons
                 ];
             }
@@ -249,7 +249,7 @@ class ShopAdminFormGUI {
             public function jsonSerialize(): array {
                 return [
                     "type" => "custom_form",
-                    "title" => "§eEdit: " . $this->category->getName(),
+                    "title" => "§6Edit: " . $this->category->getName(),
                     "content" => [
                         [
                             "type" => "input",
@@ -312,14 +312,14 @@ class ShopAdminFormGUI {
             public function jsonSerialize(): array {
                 $buttons = [];
                 foreach ($this->categories as $category) {
-                    $buttons[] = ["text" => "§c" . $category->getDisplayName()];
+                    $buttons[] = ["text" => "§4" . $category->getDisplayName() . "\n§0Click to delete"];
                 }
-                $buttons[] = ["text" => "§7Back"];
+                $buttons[] = ["text" => "§8Back\n§0Return to menu"];
 
                 return [
                     "type" => "form",
-                    "title" => "§cRemove Category",
-                    "content" => "§7Select a category to remove:",
+                    "title" => "§4Remove Category",
+                    "content" => "§0Select a category to remove:",
                     "buttons" => $buttons
                 ];
             }
@@ -382,7 +382,7 @@ class ShopAdminFormGUI {
 
                 return [
                     "type" => "custom_form",
-                    "title" => "§bAdd Item",
+                    "title" => "§3Add Item",
                     "content" => [
                         [
                             "type" => "dropdown",
